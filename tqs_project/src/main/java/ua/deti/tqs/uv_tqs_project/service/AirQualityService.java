@@ -1,5 +1,6 @@
 package ua.deti.tqs.uv_tqs_project.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import ua.deti.tqs.uv_tqs_project.AirQuality;
@@ -10,9 +11,12 @@ import org.json.*;
 public class AirQualityService {
     private AirQualityCache airQualityCache;
 
+    @Value("${apiKey}")
+    private String apiKey;
+
     public AirQuality getData(String city) {
         RestTemplate restTemplate = new RestTemplate();
-        String airQualityResults = restTemplate.getForObject("https://api.weatherbit.io/v2.0/current/airquality?city=" + city + "&key=08e72c5cff1b4b7794a4272224d1597f", String.class);
+        String airQualityResults = restTemplate.getForObject("https://api.weatherbit.io/v2.0/current/airquality?city=" + city + "&key=" + apiKey, String.class);
         //System.out.println(airQualityResults);
         JSONObject json = new JSONObject(airQualityResults);
         JSONArray dataArray = json.getJSONArray("data");
