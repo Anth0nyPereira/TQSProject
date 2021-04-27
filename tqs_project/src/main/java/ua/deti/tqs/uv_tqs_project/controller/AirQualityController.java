@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import ua.deti.tqs.uv_tqs_project.service.UVService;
-import ua.deti.tqs.uv_tqs_project.UVValue;
+import ua.deti.tqs.uv_tqs_project.AirQuality;
+import ua.deti.tqs.uv_tqs_project.service.AirQualityService;
 
 @RestController
-@RequestMapping("/api/uv")
-public class UVController {
+@RequestMapping("/api")
+public class AirQualityController {
 
     @Autowired
-    private UVService uvservice;
+    private AirQualityService aqService;
 
-    @GetMapping("")
-    public ResponseEntity<UVValue> getUV(@RequestParam double latitude, @RequestParam double longitude) {
-        return new ResponseEntity<>(uvservice.getUVValue(latitude, longitude), HttpStatus.OK);
+    @GetMapping("/data")
+    public ResponseEntity<AirQuality> getData(@RequestParam String city) {
+        return new ResponseEntity<>(aqService.getData(city), HttpStatus.OK);
     }
 
 }
