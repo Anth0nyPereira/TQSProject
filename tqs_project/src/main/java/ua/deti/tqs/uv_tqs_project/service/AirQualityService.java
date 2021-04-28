@@ -34,10 +34,16 @@ public class AirQualityService {
                 airQualityCache.removeByCityName(cityName);
                 AirQuality airQuality = getDataFromExternalAPI(cityName);
                 System.out.println("came from external API because data was invalid");
+                airQualityCache.updateRequests();
+                airQualityCache.updateMisses();
+                System.out.println(airQualityCache.getCacheStatistics());
                 return airQuality;
             } else {
                 AirQuality airQuality = airQualityCache.getValue(cityName);
                 System.out.println("came from cache");
+                airQualityCache.updateRequests();
+                airQualityCache.updateHits();
+                System.out.println(airQualityCache.getCacheStatistics());
                 return airQuality;
             }
 

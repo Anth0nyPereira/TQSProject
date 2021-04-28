@@ -11,17 +11,20 @@ import java.util.Set;
 @Component
 public class AirQualityCache {
     private Map<City, AirQuality> cache = new HashMap<>();
+    private int countRequests;
+    private int hits;
+    private int misses;
+
 
     public AirQualityCache() {
 
+        this.countRequests = countRequests;
+        this.hits = hits;
+        this.misses = misses;
     }
 
     public void add(City key, AirQuality value) {
         cache.put(key, value);
-    }
-
-    public boolean containsKey(City key) {
-        return cache.containsKey(key);
     }
 
     public boolean checkIfCityExists(String cityName) {
@@ -72,6 +75,25 @@ public class AirQualityCache {
             return cache.get(existingCity);
         }
         return null;
+    }
+
+    public int updateRequests() {
+        this.countRequests = this.countRequests + 1;
+        return this.countRequests;
+    }
+
+    public int updateHits() {
+        this.hits = this.hits + 1;
+        return this.hits;
+    }
+
+    public int updateMisses() {
+        this.misses = this.misses + 1;
+        return this.misses;
+    }
+
+    public String getCacheStatistics() {
+        return "CountOfRequests: " + this.countRequests + ", Hits: " + this.hits + ", Misses: " + this.misses;
     }
 
     @Override
