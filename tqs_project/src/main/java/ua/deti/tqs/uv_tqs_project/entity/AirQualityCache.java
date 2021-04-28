@@ -6,14 +6,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AirQualityCache {
-    private Map<Integer, AirQuality> cache = new HashMap<>();
+    private Map<String, AirQuality> cache;
 
-    public AirQualityCache(Map<Integer, AirQuality> cache) {
-        this.cache = cache;
+    public AirQualityCache(Map<String, AirQuality> cache) {
+        this.cache = new HashMap<>();
     }
 
-    public void add(AirQuality value) {
-        cache.put(1, value);
+    public void add(String key, AirQuality value) {
+        cache.put(key, value);
     }
 
     public boolean containsKey(String key) {
