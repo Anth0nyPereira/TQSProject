@@ -22,8 +22,6 @@ public class AirQualityService {
 
     private static RestTemplate restTemplate = new RestTemplate();
 
-    private static Date date = new Date();
-
     public AirQuality getData(String cityName) {
         System.out.println(airQualityCache);
         if (airQualityCache.checkIfCityExists(cityName)) {
@@ -73,9 +71,4 @@ public class AirQualityService {
     public static RestTemplate getRestTemplate() {
         return restTemplate;
     }
-
-    public static Date getDate() {
-        return date;
-    }
-
 }
