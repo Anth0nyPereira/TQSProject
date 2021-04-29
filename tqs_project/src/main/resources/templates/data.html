@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Data</title>
 </head>
 <body>
     <h1>Data</h1>
+    <p th:text="${airquality.aqIndex}"></p>
+    <p th:text="${airquality.co}"></p>
+    <p th:text="${airquality.o3}"></p>
+    <p th:text="${airquality.so2}"></p>
+    <p th:text="${airquality.no2}"></p>
+    <p th:text="${airquality.pm10}"></p>
+    <p th:text="${airquality.pm25}"></p>
+    <p th:text="${airquality.predominantPollenType}"></p>
+    <p th:text="${airquality.pollenLevelTree}"></p>
+    <p th:text="${airquality.pollenLevelWeed}"></p>
+    <p th:text="${airquality.pollenLevelGrass}"></p>
+    <p th:text="${airquality.pollenLevelMold}"></p>
 </body>
 </html>
