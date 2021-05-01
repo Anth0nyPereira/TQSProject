@@ -28,6 +28,7 @@ public class PagesController {
         AirQuality airQuality = service.getData(city);
         System.out.println(airQuality);
         modelAndView.addObject("airquality", airQuality);
+        modelAndView.addObject("city", city);
         return modelAndView;
     }
 }
