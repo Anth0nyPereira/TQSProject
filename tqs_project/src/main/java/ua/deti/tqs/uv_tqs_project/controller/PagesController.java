@@ -23,10 +23,10 @@ public class PagesController {
 
     @RequestMapping("/info")
     public ModelAndView Data(@RequestParam String city) {
-        System.out.println(city);
         ModelAndView modelAndView = new ModelAndView("data");
         AirQuality airQuality = service.getData(city);
         System.out.println(airQuality);
+        System.out.println(service.getStats());
         modelAndView.addObject("airquality", airQuality);
         modelAndView.addObject("city", city);
         return modelAndView;

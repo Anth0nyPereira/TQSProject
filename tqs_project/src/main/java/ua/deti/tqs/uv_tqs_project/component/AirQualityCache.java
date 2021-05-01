@@ -1,5 +1,6 @@
 package ua.deti.tqs.uv_tqs_project.component;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ua.deti.tqs.uv_tqs_project.AirQuality;
 
@@ -11,16 +12,13 @@ import java.util.Set;
 @Component
 public class AirQualityCache {
     private Map<City, AirQuality> cache = new HashMap<>();
-    private int countRequests;
-    private int hits;
-    private int misses;
+
+    @Autowired
+    private AirQualityStatistics stats;
+
 
 
     public AirQualityCache() {
-
-        this.countRequests = countRequests;
-        this.hits = hits;
-        this.misses = misses;
     }
 
     public void add(City key, AirQuality value) {
@@ -78,22 +76,19 @@ public class AirQualityCache {
     }
 
     public int updateRequests() {
-        this.countRequests = this.countRequests + 1;
-        return this.countRequests;
+        return stats.updateRequests();
     }
 
     public int updateHits() {
-        this.hits = this.hits + 1;
-        return this.hits;
+        return stats.updateHits();
     }
 
     public int updateMisses() {
-        this.misses = this.misses + 1;
-        return this.misses;
+        return stats.updateMisses();
     }
 
-    public String getCacheStatistics() {
-        return "CountOfRequests: " + this.countRequests + ", Hits: " + this.hits + ", Misses: " + this.misses;
+    public AirQualityStatistics getCacheStatistics() {
+        return stats;
     }
 
     @Override
