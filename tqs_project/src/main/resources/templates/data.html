@@ -22,7 +22,7 @@
             top: 30%;
             left: 50%;
             margin: -100px 0 0 -150px;
-            background: rgba(225, 225, 225, .8);
+            background: rgba(225, 225, 225, 0.4);
         }
 
         .align {
@@ -31,22 +31,36 @@
         }
 
         body {
-            background: url("../static/images/data_background.jpg");
+            background: url("../static/images/data_background2.jpg");
             background-repeat: no-repeat;
             background-size: cover;
         }
 
-        align-header {
+        .align-header {
             display: inline-block;
-            font-size: 25px;
+            font-size: 45px;
+            font-family: Z003;
+            color: white;
         }
+
+        .go-back {
+            width: 7%;
+            height: 7%;
+
+        }
+
 
     </style>
 </head>
 <body>
+    <div>
+        <form action="#" th:action="@{/}">
+            <button class="go-back" type="submit" value="0">GO BACK</button>
+        </form>
+    </div>
     <div class="title">
-        <p class="align">Data for: </p>
-        <p class="align" th:text="${city}"></p>
+        <p class="align-header">Data for: </p>
+        <p class="align-header" th:text="${city}"></p>
     </div>
     <div class="content">
         <div>
