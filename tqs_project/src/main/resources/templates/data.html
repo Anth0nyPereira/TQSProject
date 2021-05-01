@@ -2,20 +2,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Data</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+
+        .title {
+            margin-top:auto;
+            margin-bottom:auto;
+            text-align:center;
+            padding-top: 1%;
+        }
+
+        .content {
+            margin-top:auto;
+            margin-bottom:auto;
+            text-align:center;
+            padding-top: 10%;
+        }
+
+        .align {
+            display: inline-block;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Data</h1>
-    <p th:text="${airquality.aqIndex}"></p>
-    <p th:text="${airquality.co}"></p>
-    <p th:text="${airquality.o3}"></p>
-    <p th:text="${airquality.so2}"></p>
-    <p th:text="${airquality.no2}"></p>
-    <p th:text="${airquality.pm10}"></p>
-    <p th:text="${airquality.pm25}"></p>
-    <p th:text="${airquality.predominantPollenType}"></p>
-    <p th:text="${airquality.pollenLevelTree}"></p>
-    <p th:text="${airquality.pollenLevelWeed}"></p>
-    <p th:text="${airquality.pollenLevelGrass}"></p>
-    <p th:text="${airquality.pollenLevelMold}"></p>
+    <div class="title">
+        <h1>Data</h1>
+    </div>
+    <div class="content">
+        <div>
+            <p class="align">Air Quality Index: </p>
+            <p class="align" th:text="${airquality.aqIndex}"></p>
+        </div>
+
+        <p th:text="${airquality.co}"></p>
+        <p th:text="${airquality.o3}"></p>
+        <p th:text="${airquality.so2}"></p>
+        <p th:text="${airquality.no2}"></p>
+        <p th:text="${airquality.pm10}"></p>
+        <p th:text="${airquality.pm25}"></p>
+        <p th:text="${airquality.predominantPollenType}"></p>
+        <p th:text="${airquality.pollenLevelTree}"></p>
+        <p th:text="${airquality.pollenLevelWeed}"></p>
+        <p th:text="${airquality.pollenLevelGrass}"></p>
+        <p th:text="${airquality.pollenLevelMold}"></p>
+    </div>
+
 </body>
 </html>
