@@ -86,6 +86,10 @@ public class AirQualityCache {
         return stats.updateMisses();
     }
 
+    public Map<City, AirQuality> getCache() {
+        return cache;
+    }
+
     public AirQualityStatistics getCacheStatistics() {
         return stats;
     }

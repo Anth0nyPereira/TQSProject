@@ -11,8 +11,7 @@ import org.json.*;
 import ua.deti.tqs.uv_tqs_project.component.AirQualityStatistics;
 import ua.deti.tqs.uv_tqs_project.component.City;
 
-import java.util.Date;
-import java.util.Locale;
+import java.util.*;
 
 @Log4j2
 @Service
@@ -140,6 +139,10 @@ public class AirQualityService {
         airQualityCache.add(city, airQuality);
         log.info("came from external API");
         return airQuality;
+    }
+
+    public Map<City, AirQuality> findAll() {
+        return airQualityCache.getCache();
     }
 
     public static RestTemplate getRestTemplate() {
