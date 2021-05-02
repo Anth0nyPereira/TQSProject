@@ -23,6 +23,8 @@ public class PagesController {
 
     @RequestMapping("/info")
     public ModelAndView Data(@RequestParam String city) {
+        city = city.toLowerCase();
+        city = city.substring(0, 1).toUpperCase() + city.substring(1);
         ModelAndView modelAndView = new ModelAndView("data");
         AirQuality airQuality = service.getData(city);
         System.out.println(airQuality);

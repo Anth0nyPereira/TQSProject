@@ -56,7 +56,6 @@ public class AirQualityCache {
         if (oldCity != null) {
             cache.remove(oldCity);
         }
-
     }
 
     public long returnTimeByCityName(String cityName) {
@@ -97,4 +96,55 @@ public class AirQualityCache {
                 "cache=" + cache +
                 '}';
     }
+    // Search by coordinates - API //
+
+    public boolean checkIfCityExists(double lat, double lon) {
+        Set<City> set = cache.keySet();
+        Iterator<City> i = set.iterator();
+        while (i.hasNext()) {
+            City res = i.next();
+            if (res.getLatitude() == lat && res.getLongitude() == lon) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public City returnCityIfCityExists(double lat, double lon) {
+        if (checkIfCityExists(lat, lon)) {
+            Set<City> set = cache.keySet();
+            Iterator<City> i = set.iterator();
+            while (i.hasNext()) {
+                City res = i.next();
+                if (res.getLatitude() == lat && res.getLongitude() == lon) {
+                    return res;
+                }
+            }
+        }
+        return null;
+    }
+
+    public long returnTimeByCoords(double lat, double lon) {
+        City existingCity = returnCityIfCityExists(lat, lon);
+        if (existingCity != null) {
+            return existingCity.getTime();
+        }
+        return 0;
+    }
+
+    public void removeByCoords(double lat, double lon) {
+        City oldCity = returnCityIfCityExists(lat, lon);
+        if (oldCity != null) {
+            cache.remove(oldCity);
+        }
+    }
+
+    public AirQuality getValue(double lat, double lon) {
+        City existingCity = returnCityIfCityExists(lat, lon);
+        if (existingCity != null) {
+            return cache.get(existingCity);
+        }
+        return null;
+    }
+
 }

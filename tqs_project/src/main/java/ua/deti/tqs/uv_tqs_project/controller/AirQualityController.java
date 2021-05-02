@@ -31,4 +31,10 @@ public class AirQualityController {
         return new ResponseEntity<>(aqService.getStats(), HttpStatus.OK);
     }
 
+    @GetMapping("/dataByCoords")
+    public ResponseEntity<Object> getDataByCoords(@RequestParam double lat, @RequestParam double lon) {
+        System.out.println(aqService.getAirQualityCache());
+        return new ResponseEntity<Object>(aqService.getDataByCoords(lat, lon), HttpStatus.OK);
+    }
+
 }

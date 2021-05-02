@@ -39,4 +39,13 @@ public class AirQualityStatistics {
         this.misses = this.misses + 1;
         return this.misses;
     }
+
+    @Override
+    public String toString() {
+        return "AirQualityStatistics{" +
+                "countRequests=" + countRequests +
+                ", hits=" + hits +
+                ", misses=" + misses +
+                '}';
+    }
 }

@@ -12,6 +12,7 @@ import ua.deti.tqs.uv_tqs_project.component.AirQualityStatistics;
 import ua.deti.tqs.uv_tqs_project.component.City;
 
 import java.util.Date;
+import java.util.Locale;
 
 @Log4j2
 @Service
@@ -26,6 +27,8 @@ public class AirQualityService {
     private static RestTemplate restTemplate = new RestTemplate();
 
     public AirQuality getData(String cityName) {
+        cityName = cityName.toLowerCase();
+        cityName = cityName.substring(0, 1).toUpperCase() + cityName.substring(1);
         log.info("Cache at the moment: " + airQualityCache);
         if (airQualityCache.checkIfCityExists(cityName)) {
             Date date = new Date();
@@ -68,7 +71,10 @@ public class AirQualityService {
         // Instantiate new City object to be stored in cache
         Date date = new Date();
         long timeCreated = date.getTime();
-        City city = new City(cityName, timeCreated);
+        System.out.println(json.getDouble("lat"));
+        double latitude = json.getDouble("lat");
+        double longitude = json.getDouble("lon");
+        City city = new City(cityName, timeCreated, latitude, longitude);
 
         // Store it in cache
         airQualityCache.add(city, airQuality);
@@ -82,7 +88,65 @@ public class AirQualityService {
         return aqs;
     }
 
+    public Object getDataByCoords(double lat, double lon) {
+        log.info("Cache at the moment: " + airQualityCache);
+        if (airQualityCache.checkIfCityExists(lat, lon)) {
+            Date date = new Date();
+            long timeMs = date.getTime();
+            long oldCityTime = airQualityCache.returnTimeByCoords(lat, lon);
+            //System.out.println("timeMs: " + timeMs);
+            //System.out.println("difference: " + (timeMs - oldCityTime));
+            if (timeMs - oldCityTime  >= 10000) { // invalid, remove and call external API
+                airQualityCache.removeByCoords(lat, lon);
+                AirQuality airQuality = getDataByCoordsFromExternalAPI(lat, lon);
+                log.info("came from external API because data was invalid");
+                airQualityCache.updateRequests();
+                airQualityCache.updateMisses();
+                log.info("Cache statistics: " + airQualityCache.getCacheStatistics());
+                return airQuality;
+            } else {
+                AirQuality airQuality = airQualityCache.getValue(lat, lon);
+                log.info("came from cache");
+                airQualityCache.updateRequests();
+                airQualityCache.updateHits();
+                log.info("Cache statistics: " + airQualityCache.getCacheStatistics());
+                return airQuality;
+            }
+
+        } else { // directly from external API
+            AirQuality airQuality = getDataByCoordsFromExternalAPI(lat, lon);
+            return airQuality;
+        }
+    }
+
+    public AirQuality getDataByCoordsFromExternalAPI(double lat, double lon) {
+        RestTemplate restTemplate = getRestTemplate();
+        String airQualityResults = restTemplate.getForObject("https://api.weatherbit.io/v2.0/current/airquality?lat=" + lat + "&lon=" + lon + "&key=" + apiKey, String.class);
+        JSONObject json = new JSONObject(airQualityResults);
+        JSONArray dataArray = json.getJSONArray("data");
+        JSONObject data = dataArray.getJSONObject(0);
+        AirQuality airQuality = new AirQuality(data.getInt("aqi"), data.getDouble("co"), data.getDouble("o3"), data.getDouble("so2"), data.getDouble("no2"), data.getDouble("pm10"), data.getDouble("pm25"), data.getString("predominant_pollen_type"), data.getInt("pollen_level_tree"), data.getInt("pollen_level_weed"), data.getInt("pollen_level_grass"), data.getInt("mold_level"));
+
+        // Instantiate new City object to be stored in cache
+        Date date = new Date();
+        long timeCreated = date.getTime();
+        System.out.println(json.getDouble("lat"));
+        double latitude = json.getDouble("lat");
+        double longitude = json.getDouble("lon");
+        String cityName = json.getString("city_name");
+        City city = new City(cityName, timeCreated, latitude, longitude);
+
+        // Store it in cache
+        airQualityCache.add(city, airQuality);
+        log.info("came from external API");
+        return airQuality;
+    }
+
     public static RestTemplate getRestTemplate() {
         return restTemplate;
+    }
+
+    public AirQualityCache getAirQualityCache() {
+        return airQualityCache;
     }
 }
