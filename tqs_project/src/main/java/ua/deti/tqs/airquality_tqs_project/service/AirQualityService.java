@@ -87,7 +87,7 @@ public class AirQualityService {
         return aqs;
     }
 
-    public Object getDataByCoords(double lat, double lon) {
+    public AirQuality getDataByCoords(double lat, double lon) {
         log.info("Cache at the moment: " + airQualityCache);
         if (airQualityCache.checkIfCityExists(lat, lon)) {
             Date date = new Date();

@@ -22,25 +22,45 @@ public class AirQualityController {
     private AirQualityService aqService;
 
     @GetMapping("/data")
-    public ResponseEntity<AirQuality> getData(@RequestParam String city) {
-        //System.out.println("timeMilli: " + timeMilli);
-        return new ResponseEntity<>(aqService.getData(city), HttpStatus.OK);
+    public ResponseEntity<Object> getData(@RequestParam String city) {
+        AirQuality aq = aqService.getData(city);
+        if (aq != null) {
+            return new ResponseEntity<>(aq, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Could not find any data", HttpStatus.NOT_FOUND);
+        }
+
     }
 
     @GetMapping("/stats")
-    public ResponseEntity<AirQualityStatistics> getStatistics() {
-        return new ResponseEntity<>(aqService.getStats(), HttpStatus.OK);
+    public ResponseEntity<Object> getStatistics() {
+        AirQualityStatistics aqs = aqService.getStats();
+        if (aqs != null) {
+            return new ResponseEntity<>(aqs, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Could not find any data", HttpStatus.NOT_FOUND);
+        }
+
     }
 
     @GetMapping("/dataByCoords")
     public ResponseEntity<Object> getDataByCoords(@RequestParam double lat, @RequestParam double lon) {
-        System.out.println(aqService.getAirQualityCache());
-        return new ResponseEntity<Object>(aqService.getDataByCoords(lat, lon), HttpStatus.OK);
+        AirQuality aq = aqService.getDataByCoords(lat, lon);
+        if (aq != null) {
+            return new ResponseEntity<>(aq, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Could not find any data", HttpStatus.NOT_FOUND);
+        }
     }
 
     @GetMapping("/cache")
-    public ResponseEntity<Map<City, AirQuality>> getAllCitiesFromCache() {
-        return new ResponseEntity<>(aqService.findAll(), HttpStatus.OK);
+    public ResponseEntity<Object> getAllCitiesFromCache() {
+        Map<City, AirQuality> cache = aqService.findAll();
+        if (!cache.isEmpty()) {
+            return new ResponseEntity<>(aqService.findAll(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Cache is empty", HttpStatus.NOT_FOUND);
+        }
     }
 
 }
