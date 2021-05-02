@@ -1,13 +1,12 @@
-package ua.deti.tqs.uv_tqs_project.controller;
+package ua.deti.tqs.airquality_tqs_project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import ua.deti.tqs.uv_tqs_project.AirQuality;
-import ua.deti.tqs.uv_tqs_project.service.AirQualityService;
+import ua.deti.tqs.airquality_tqs_project.AirQuality;
+import ua.deti.tqs.airquality_tqs_project.service.AirQualityService;
 
 @Controller
 @RequestMapping("")

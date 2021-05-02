@@ -1,4 +1,4 @@
-package ua.deti.tqs.uv_tqs_project.component;
+package ua.deti.tqs.airquality_tqs_project.component;
 
 public class City {
     private String city;

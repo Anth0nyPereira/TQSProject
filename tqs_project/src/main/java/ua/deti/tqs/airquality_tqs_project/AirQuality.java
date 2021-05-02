@@ -1,4 +1,4 @@
-package ua.deti.tqs.uv_tqs_project;
+package ua.deti.tqs.airquality_tqs_project;
 
 public class AirQuality {
 

@@ -1,15 +1,15 @@
-package ua.deti.tqs.uv_tqs_project.service;
+package ua.deti.tqs.airquality_tqs_project.service;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import ua.deti.tqs.uv_tqs_project.AirQuality;
-import ua.deti.tqs.uv_tqs_project.component.AirQualityCache;
+import ua.deti.tqs.airquality_tqs_project.AirQuality;
+import ua.deti.tqs.airquality_tqs_project.component.AirQualityCache;
 import org.json.*;
-import ua.deti.tqs.uv_tqs_project.component.AirQualityStatistics;
-import ua.deti.tqs.uv_tqs_project.component.City;
+import ua.deti.tqs.airquality_tqs_project.component.AirQualityStatistics;
+import ua.deti.tqs.airquality_tqs_project.component.City;
 
 import java.util.*;
 

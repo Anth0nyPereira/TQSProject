@@ -1,4 +1,4 @@
-package ua.deti.tqs.uv_tqs_project.component;
+package ua.deti.tqs.airquality_tqs_project.component;
 
 import org.springframework.stereotype.Component;
 
