@@ -35,16 +35,26 @@ public class AirQualityRestControllerServiceTest {
     private AirQualityService aqService;
 
     @Test
-    public void givenAnAirQualityObject_whenGetThisObject_thenReturnThisObject() throws Exception {
+    public void givenAnAirQualityObject_whenGetThisObjectByCityName_thenReturnThisObject() throws Exception {
         String cityName = "Aveiro";
         AirQuality airQuality = new AirQuality(12, 264.5, 17, 4, 12, 13, 3, "Molds", 1, 1, 1, 1);
-        AirQuality airQuality2 = new AirQuality(3, 79, 24, 4.5, 34, 21.1, 3.4, "Trees", 2, 1, 1, 1);
-
         given(aqService.getData(cityName)).willReturn(airQuality);
 
         mvc.perform(get("/api/data?city=" + cityName).contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk()).andExpect(jsonPath("$.*", hasSize(12))).andExpect(jsonPath("aqIndex", is(airQuality.getAqIndex())));
         verify(aqService, VerificationModeFactory.times(1)).getData(cityName);
 
+    }
+
+    @Test
+    public void givenAnAirQualityObject_whenGetObjectByCoords_thenReturnObject() throws Exception {
+        double latitude = 40.64427;
+        double longitude = -8.64554;
+        AirQuality airQuality = new AirQuality(12, 264.5, 17, 4, 12, 13, 3, "Molds", 1, 1, 1, 1);
+
+        given(aqService.getDataByCoords(latitude, longitude)).willReturn(airQuality);
+
+        mvc.perform(get("/api/dataByCoords?lat=" + latitude + "&lon=" + longitude).contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk()).andExpect(jsonPath("$.*", hasSize(12))).andExpect(jsonPath("aqIndex", is(airQuality.getAqIndex())));
+        verify(aqService, VerificationModeFactory.times(1)).getDataByCoords(latitude, longitude);
     }
 
 }
