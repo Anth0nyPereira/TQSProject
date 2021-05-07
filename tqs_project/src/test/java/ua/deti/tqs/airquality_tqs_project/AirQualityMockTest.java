@@ -31,8 +31,6 @@ public class AirQualityMockTest {
     @BeforeEach
     public void setUp() {
         String city1 = "Aveiro";
-        String city2 = "New York";
-        String city3 = "London";
         AirQuality aq1 = new AirQuality(12, 264.5, 17, 4, 12, 13, 3, "Molds", 1, 1, 1, 1);
         Mockito.when(aqService.getDataFromExternalAPI(city1)).thenReturn(aq1);
     }
