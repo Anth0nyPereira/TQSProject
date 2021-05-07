@@ -33,9 +33,9 @@ public class AirQualityRestControllerServiceTest {
 
     @MockBean
     private AirQualityService aqService;
-    
+
     @Test
-    public void givenCars_whenGetCars_thenReturnJsonArray() throws Exception {
+    public void givenAnAirQualityObject_whenGetThisObject_thenReturnThisObject() throws Exception {
         String cityName = "Aveiro";
         AirQuality airQuality = new AirQuality(12, 264.5, 17, 4, 12, 13, 3, "Molds", 1, 1, 1, 1);
         AirQuality airQuality2 = new AirQuality(3, 79, 24, 4.5, 34, 21.1, 3.4, "Trees", 2, 1, 1, 1);
