@@ -1,5 +1,7 @@
 package ua.deti.tqs.airquality_tqs_project.component;
 
+import java.util.Objects;
+
 public class City {
     private String city;
     private long time;
@@ -27,6 +29,19 @@ public class City {
 
     public double getLongitude() {
         return longitude;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        City city1 = (City) o;
+        return time == city1.time && Double.compare(city1.latitude, latitude) == 0 && Double.compare(city1.longitude, longitude) == 0 && city.equals(city1.city);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(city, time, latitude, longitude);
     }
 
     @Override

@@ -74,6 +74,10 @@ public class AirQualityCache {
         return null;
     }
 
+    public int getSize() {
+        return cache.size();
+    }
+
     public int updateRequests() {
         return stats.updateRequests();
     }

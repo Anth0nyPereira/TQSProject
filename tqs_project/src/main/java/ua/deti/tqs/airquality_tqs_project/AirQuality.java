@@ -1,5 +1,7 @@
 package ua.deti.tqs.airquality_tqs_project;
 
+import java.util.Objects;
+
 public class AirQuality {
 
     private int aqIndex;
@@ -33,24 +35,6 @@ public class AirQuality {
         this.pollenLevelWeed = pollenLevelWeed;
         PollenLevelGrass = pollenLevelGrass;
         PollenLevelMold = pollenLevelMold;
-    }
-
-    @Override
-    public String toString() {
-        return "AirQuality{" +
-                "aqIndex=" + aqIndex +
-                ", co=" + co +
-                ", o3=" + o3 +
-                ", so2=" + so2 +
-                ", no2=" + no2 +
-                ", pm10=" + pm10 +
-                ", pm25=" + pm25 +
-                ", predominantPollenType='" + predominantPollenType + '\'' +
-                ", pollenLevelTree=" + pollenLevelTree +
-                ", pollenLevelWeed=" + pollenLevelWeed +
-                ", PollenLevelGrass=" + PollenLevelGrass +
-                ", PollenLevelMold=" + PollenLevelMold +
-                '}';
     }
 
     public int getAqIndex() {
@@ -99,5 +83,36 @@ public class AirQuality {
 
     public int getPollenLevelMold() {
         return PollenLevelMold;
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AirQuality that = (AirQuality) o;
+        return aqIndex == that.aqIndex && Double.compare(that.co, co) == 0 && Double.compare(that.o3, o3) == 0 && Double.compare(that.so2, so2) == 0 && Double.compare(that.no2, no2) == 0 && Double.compare(that.pm10, pm10) == 0 && Double.compare(that.pm25, pm25) == 0 && pollenLevelTree == that.pollenLevelTree && pollenLevelWeed == that.pollenLevelWeed && PollenLevelGrass == that.PollenLevelGrass && PollenLevelMold == that.PollenLevelMold && predominantPollenType.equals(that.predominantPollenType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(aqIndex, co, o3, so2, no2, pm10, pm25, predominantPollenType, pollenLevelTree, pollenLevelWeed, PollenLevelGrass, PollenLevelMold);
+    }
+
+    @Override
+    public String toString() {
+        return "AirQuality{" +
+                "aqIndex=" + aqIndex +
+                ", co=" + co +
+                ", o3=" + o3 +
+                ", so2=" + so2 +
+                ", no2=" + no2 +
+                ", pm10=" + pm10 +
+                ", pm25=" + pm25 +
+                ", predominantPollenType='" + predominantPollenType + '\'' +
+                ", pollenLevelTree=" + pollenLevelTree +
+                ", pollenLevelWeed=" + pollenLevelWeed +
+                ", PollenLevelGrass=" + PollenLevelGrass +
+                ", PollenLevelMold=" + PollenLevelMold +
+                '}';
     }
 }
