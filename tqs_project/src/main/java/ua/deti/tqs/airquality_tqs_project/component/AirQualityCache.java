@@ -98,12 +98,6 @@ public class AirQualityCache {
         return stats;
     }
 
-    @Override
-    public String toString() {
-        return "AirQualityCache{" +
-                "cache=" + cache +
-                '}';
-    }
     // Search by coordinates - API //
 
     public boolean checkIfCityExists(double lat, double lon) {
@@ -153,6 +147,13 @@ public class AirQualityCache {
             return cache.get(existingCity);
         }
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "AirQualityCache{" +
+                "cache=" + cache +
+                '}';
     }
 
 }

@@ -34,8 +34,20 @@ public class AirQualityUnitCacheTest {
     }
 
     @Test
+    public void ifAirQUalityExistsByCoords_ThenReturnTrue() {
+        double expectedLa = 40.64427;
+        double expectedLo =  -8.64554;
+        assertTrue(cache.checkIfCityExists(expectedLa, expectedLo));
+    }
+
+    @Test
     public void ifAirQualityDoesNotExist_ThenReturnFalse() {
         assertFalse(cache.checkIfCityExists("Ovar"));
+    }
+
+    @Test
+    public void ifAirQUalityDoesNotExistByCoords_ThenReturnFalse() {
+        assertFalse(cache.checkIfCityExists(40.71427, -74.00597));
     }
 
     @Test
@@ -45,8 +57,21 @@ public class AirQualityUnitCacheTest {
     }
 
     @Test
+    public void ifAirQualityExistsByCoords_ThenReturnObject() {
+        City existingCityObject = new City("Aveiro", 1111111111, 40.64427, -8.64554);
+        double expectedLa = 40.64427;
+        double expectedLo =  -8.64554;
+        assertThat(cache.returnCityIfCityExists(expectedLa, expectedLo)).isEqualTo(existingCityObject);
+    }
+
+    @Test
     public void ifAirQualityDoesNotExist_ThenReturnNull() {
         assertThat(cache.returnCityIfCityExists("Ovar")).isNull();
+    }
+
+    @Test
+    public void ifAirQualityDoesNotExistByCoords_ThenReturnNull() {
+        assertThat(cache.returnCityIfCityExists(40.71427, -74.00597)).isNull();
     }
 
     @Test
@@ -57,9 +82,44 @@ public class AirQualityUnitCacheTest {
     }
 
     @Test
+    public void ifRemovedCityByCoords_ThenCheckSize() {
+        assertThat(cache.getSize()).isEqualTo(1);
+        cache.removeByCoords(40.64427, -8.64554);
+        assertThat(cache.getSize()).isEqualTo(0);
+    }
+
+    @Test
     public void ifCityNameExists_ThenReturnAirQualityValue() {
         String cityName = "Aveiro";
         AirQuality expected = new AirQuality(12, 264.5, 17, 4, 12, 13, 3, "Molds", 1, 1, 1, 1);
         assertThat(cache.getValue(cityName)).isEqualTo(expected);
+    }
+
+    @Test
+    public void ifCoordsExist_ThenReturnAirQualityValue() {
+        double expectedLa = 40.64427;
+        double expectedLo =  -8.64554;
+        AirQuality expected = new AirQuality(12, 264.5, 17, 4, 12, 13, 3, "Molds", 1, 1, 1, 1);
+        assertThat(cache.getValue(expectedLa, expectedLo)).isEqualTo(expected);
+    }
+
+    @Test
+    public void ifCityExists_ThenReturnTimeDifferentFromZero() {
+        assertThat(cache.returnTimeByCityName("Aveiro")).isNotZero().isGreaterThan(0);
+    }
+
+    @Test
+    public void ifCityExistsByCoords_ThenReturnTimeDifferentFromZero() {
+        assertThat(cache.returnTimeByCoords(40.64427, -8.64554)).isNotZero().isGreaterThan(0);
+    }
+
+    @Test
+    public void ifCityDoesNotExist_ThenReturnTimeZero() {
+        assertThat(cache.returnTimeByCityName("Ovar")).isZero();
+    }
+
+    @Test
+    public void ifCityDoesNotExistByCoords_ThenReturnTimeZero() {
+        assertThat(cache.returnTimeByCoords(40.71427, -74.00597)).isZero();
     }
 }
