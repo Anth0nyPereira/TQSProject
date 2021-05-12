@@ -53,4 +53,25 @@ public class AirQualitySeleniumTest {
     assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("404 Not Found"));
     assertThat(driver.findElement(By.cssSelector("p")).getText(), is("No results were found"));
   }
+
+  @Test
+  public void invalidParameterTest() {
+    driver.get("http://localhost:8080/");
+    driver.manage().window().setSize(new Dimension(1920, 1020));
+    driver.findElement(By.cssSelector(".choices__inner")).click();
+    driver.findElement(By.cssSelector(".choices__input--cloned")).sendKeys("deywuviq632vye");
+    driver.findElement(By.cssSelector(".choices__input--cloned")).sendKeys(Keys.ENTER);
+    driver.findElement(By.cssSelector(".choices__input--cloned")).sendKeys(Keys.ENTER);
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("404 Not Found"));
+    assertThat(driver.findElement(By.cssSelector("p")).getText(), is("No results were found"));
+  }
+
+  @Test
+  public void emptyParameterTest() {
+    driver.get("http://localhost:8080/");
+    driver.manage().window().setSize(new Dimension(1920, 1020));
+    driver.findElement(By.cssSelector(".choices__input--cloned")).sendKeys(Keys.ENTER);
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("HTTP 404"));
+    assertThat(driver.findElement(By.cssSelector("p")).getText(), is("You made an empty search, so no results were found"));
+  }
 }
