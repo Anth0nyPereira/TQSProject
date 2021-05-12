@@ -31,7 +31,7 @@ public class AirQualitySeleniumTest {
   }
 
   @Test
-  public void test01() {
+  public void validParameterTest() {
     driver.get("http://localhost:8080/");
     driver.manage().window().setSize(new Dimension(1920, 1020));
     driver.findElement(By.cssSelector(".choices__inner")).click();
@@ -40,5 +40,17 @@ public class AirQualitySeleniumTest {
     driver.findElement(By.cssSelector("svg")).click();
     assertThat(driver.findElement(By.id("cityName")).getText(), is("Aveiro"));
     driver.findElement(By.cssSelector(".go-back")).click();
+  }
+
+  @Test
+  public void numericParameterTest() {
+    driver.get("http://localhost:8080/");
+    driver.manage().window().setSize(new Dimension(1920, 1020));
+    driver.findElement(By.cssSelector(".choices__inner")).click();
+    driver.findElement(By.cssSelector(".choices__input--cloned")).sendKeys("12345");
+    driver.findElement(By.cssSelector(".choices__input--cloned")).sendKeys(Keys.ENTER);
+    driver.findElement(By.cssSelector(".choices__input--cloned")).sendKeys(Keys.ENTER);
+    assertThat(driver.findElement(By.cssSelector("h1")).getText(), is("404 Not Found"));
+    assertThat(driver.findElement(By.cssSelector("p")).getText(), is("No results were found"));
   }
 }
