@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import ua.deti.tqs.airquality_tqs_project.AirQuality;
+import ua.deti.tqs.airquality_tqs_project.component.City;
 import ua.deti.tqs.airquality_tqs_project.service.AirQualityService;
 
 import java.util.HashMap;
@@ -48,9 +49,67 @@ public class PagesController {
         }
     }
 
+    @RequestMapping("/infoByCoords")
+    public Object DataByCoords(@RequestParam String coordinates) {
+        for (int x = 0; x < coordinates.length(); x++) {
+            if (coordinates.charAt(x) == ',') {
+                StringBuilder coordinatesSB = new StringBuilder(coordinates);
+                coordinatesSB.setCharAt(x, ' ');
+                coordinates = coordinatesSB.toString();
+            }
+        }
+
+        String[] coordinatesArray = coordinates.split("\\s+");
+
+        if (coordinatesArray.length == 0 || coordinatesArray.length == 1 || coordinatesArray.length >= 3) {
+            System.out.println(coordinatesArray[0]);
+            return "error400";
+        }
+
+        String lat = coordinatesArray[0];
+        String lon = coordinatesArray[1];
+        System.out.println("lat: " + lat);
+        System.out.println("lon: " + lon);
+
+        if (lat == "" || lon == "") {
+            return "emptySearch";
+        }
+        if (isDouble(lat) && isDouble(lon)) {
+            double latitude = Double.parseDouble(lat);
+            double longitude = Double.parseDouble(lon);
+            if (latitude > 90 || latitude < -90 || longitude > 180 || longitude < -180) {
+                return "error400";
+            } else {
+                ModelAndView modelAndView = new ModelAndView("dataByCoords");
+                AirQuality airQuality = service.getDataByCoords(latitude, longitude);
+                if (airQuality != null) {
+                    String city = service.getCityNameByCoords(latitude, longitude);
+                    modelAndView.addObject("airquality", airQuality);
+                    modelAndView.addObject("latitude", latitude);
+                    modelAndView.addObject("longitude", longitude);
+                    modelAndView.addObject("city", city);
+                    return modelAndView;
+                } else {
+                    return "error404";
+                }
+            }
+        } else {
+            return "error400";
+        }
+    }
+
     public static boolean isNumeric(String str) {
         try {
             Integer.parseInt(str);
+            return true;
+        } catch(NumberFormatException e){
+            return false;
+        }
+    }
+
+    public static boolean isDouble(String str) {
+        try {
+            Double.parseDouble(str);
             return true;
         } catch(NumberFormatException e){
             return false;

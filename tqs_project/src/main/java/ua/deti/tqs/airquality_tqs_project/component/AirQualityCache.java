@@ -155,5 +155,4 @@ public class AirQualityCache {
                 "cache=" + cache +
                 '}';
     }
-
 }

@@ -84,7 +84,7 @@ public class AirQuality {
     public int getPollenLevelMold() {
         return PollenLevelMold;
     }
-    
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -14,6 +14,9 @@ html {
  */
 body {
   margin: 0;
+  background: url("../images/background2.png");
+  background-size: cover;
+  background-position: center center;
 }
 
 /**
@@ -496,7 +499,6 @@ legend {
 }
 
 .choices[data-type*="select-one"] .choices__button {
-  background-image: url("../../icons/cross-inverse.svg");
   padding: 0;
   background-size: 8px;
   height: 100%;
@@ -819,9 +821,6 @@ legend {
   -ms-flex-align: center;
       align-items: center;
   font-family: 'Poppins', sans-serif;
-  background: url("../images/background2.png");
-  background-size: cover;
-  background-position: center center;
   padding: 15px;
 }
 
@@ -970,3 +969,8 @@ legend {
   margin-right: 10px;
   margin-bottom: 10px;
 }
+
+.black{
+  color: black !important;
+}
+
