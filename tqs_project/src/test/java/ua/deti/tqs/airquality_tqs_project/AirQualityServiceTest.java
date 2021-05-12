@@ -10,8 +10,6 @@ import ua.deti.tqs.airquality_tqs_project.component.AirQualityCache;
 import ua.deti.tqs.airquality_tqs_project.component.City;
 import ua.deti.tqs.airquality_tqs_project.service.AirQualityService;
 
-import java.util.Date;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @ExtendWith(SpringExtension.class)

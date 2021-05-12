@@ -24,8 +24,10 @@ public class PagesController {
     }
 
     @RequestMapping("/info")
-    public ModelAndView Data(@RequestParam String city) {
-        if (!isNumeric(city)) {
+    public Object Data(@RequestParam String city) {
+        if (city == "") {
+            return "emptySearch";
+        } else if (!isNumeric(city)) {
             city = city.toLowerCase();
             city = city.substring(0, 1).toUpperCase() + city.substring(1);
             ModelAndView modelAndView = new ModelAndView("data");
@@ -33,11 +35,17 @@ public class PagesController {
             System.out.println(airQuality);
             System.out.println(service.getStats());
             System.out.println(modelAndView);
-            modelAndView.addObject("airquality", airQuality);
-            modelAndView.addObject("city", city);
-            return modelAndView;
+            if (airQuality != null) {
+                modelAndView.addObject("airquality", airQuality);
+                modelAndView.addObject("city", city);
+                return modelAndView;
+            } else {
+                return "error404";
+            }
+
+        } else {
+            return "error404";
         }
-        throw new IllegalStateException();
     }
 
     public static boolean isNumeric(String str) {

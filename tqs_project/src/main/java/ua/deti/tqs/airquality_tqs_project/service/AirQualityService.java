@@ -61,24 +61,28 @@ public class AirQualityService {
     public AirQuality getDataFromExternalAPI(String cityName) {
         RestTemplate restTemplate = getRestTemplate();
         String airQualityResults = restTemplate.getForObject("https://api.weatherbit.io/v2.0/current/airquality?city=" + cityName + "&key=" + apiKey, String.class);
-        //System.out.println(airQualityResults);
-        JSONObject json = new JSONObject(airQualityResults);
-        JSONArray dataArray = json.getJSONArray("data");
-        JSONObject data = dataArray.getJSONObject(0);
-        AirQuality airQuality = new AirQuality(data.getInt("aqi"), data.getDouble("co"), data.getDouble("o3"), data.getDouble("so2"), data.getDouble("no2"), data.getDouble("pm10"), data.getDouble("pm25"), data.getString("predominant_pollen_type"), data.getInt("pollen_level_tree"), data.getInt("pollen_level_weed"), data.getInt("pollen_level_grass"), data.getInt("mold_level"));
+        if (airQualityResults != null) {
+            log.info("airqualityresults: " + airQualityResults);
+            JSONObject json = new JSONObject(airQualityResults);
+            JSONArray dataArray = json.getJSONArray("data");
+            JSONObject data = dataArray.getJSONObject(0);
+            AirQuality airQuality = new AirQuality(data.getInt("aqi"), data.getDouble("co"), data.getDouble("o3"), data.getDouble("so2"), data.getDouble("no2"), data.getDouble("pm10"), data.getDouble("pm25"), data.getString("predominant_pollen_type"), data.getInt("pollen_level_tree"), data.getInt("pollen_level_weed"), data.getInt("pollen_level_grass"), data.getInt("mold_level"));
 
-        // Instantiate new City object to be stored in cache
-        Date date = new Date();
-        long timeCreated = date.getTime();
-        System.out.println(json.getDouble("lat"));
-        double latitude = json.getDouble("lat");
-        double longitude = json.getDouble("lon");
-        City city = new City(cityName, timeCreated, latitude, longitude);
+            // Instantiate new City object to be stored in cache
+            Date date = new Date();
+            long timeCreated = date.getTime();
+            System.out.println(json.getDouble("lat"));
+            double latitude = json.getDouble("lat");
+            double longitude = json.getDouble("lon");
+            City city = new City(cityName, timeCreated, latitude, longitude);
 
-        // Store it in cache
-        airQualityCache.add(city, airQuality);
-        log.info("came from external API");
-        return airQuality;
+            // Store it in cache
+            airQualityCache.add(city, airQuality);
+            log.info("came from external API");
+            return airQuality;
+        } else {
+            return null;
+        }
     }
 
 

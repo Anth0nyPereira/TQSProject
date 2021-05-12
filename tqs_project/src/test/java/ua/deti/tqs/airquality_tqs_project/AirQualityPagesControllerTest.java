@@ -1,6 +1,5 @@
 package ua.deti.tqs.airquality_tqs_project;
 
-import org.bouncycastle.math.raw.Mod;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -25,9 +24,17 @@ public class AirQualityPagesControllerTest {
     }
 
     @Test
-    public void whenBadTypeParam_ThenThrowError() {
-        Assertions.assertThrows(IllegalStateException.class, () -> {
-            pagesController.Data("12345");
-        });
+    public void whenNumericTypeParam_ThenReturn404ErrorPage() {
+        assertThat(pagesController.Data("12345")).isEqualTo("error404");
+    }
+
+    @Test
+    public void whenEmptySearch_ThenReturn404ErrorPageEmptySearch() {
+        assertThat(pagesController.Data("")).isEqualTo("emptySearch");
+    }
+
+    @Test
+    public void whenBadTypeParam_ThenReturn404ErrorPage() {
+        assertThat(pagesController.Data("48q3fg849g7f0q")).isEqualTo("error404");
     }
 }
