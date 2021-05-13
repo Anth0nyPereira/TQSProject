@@ -4,6 +4,6 @@
     Scénario: Chercher par coordonnées
       Soit que l'application a été mise en route
       Quand un utilisateur vá sur la page d'accueil
-      Et écrit 40 et -40 sur la barre de recherche réservé pour la recherche par coordonnées
+      Et écrit 40.0 et -40.0 sur la barre de recherche réservé pour la recherche par coordonnées
       Et appuie sur Enter
-      Alors 40 et -40 apparaissent en-tête de page
+      Alors 40.0 et -40.0 apparaissent en-tête de page

@@ -67,19 +67,20 @@ public class AirQualitySearchSteps {
 
     @Et("écrit {double} et {double} sur la barre de recherche réservé pour la recherche par coordonnées")
     public void écritEtSurLaBarreDeRechercheRéservéPourLaRechercheParCoordonnées(double latitude, double longitude) {
-        driver.findElement(By.xpath("//input[@placeholder='Search by coords...']")).sendKeys(String.valueOf(latitude) + " " + String.valueOf(longitude));
+        driver.findElement(By.xpath("/html/body/div/div[3]/form/fieldset/div/div/div/div[1]/input[2]")).sendKeys(String.valueOf(latitude) + " " + String.valueOf(longitude));
     }
 
 
     @Et("appuie sur Enter")
     public void appuieSurEnter() {
-        driver.findElement(By.cssSelector("form:nth-child(2) .btn-search")).click();
+        driver.findElement(By.xpath("/html/body/div/div[3]/form/fieldset/div/div/div/div[1]/input[2]")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("/html/body/div/div[3]/form/fieldset/div/div/div/div[1]/input[2]")).sendKeys(Keys.ENTER);
     }
 
 
     @Alors("{double} et {double} apparaissent en-tête de page")
     public void etApparaissentEnTêteDePage(double latitude, double longitude) {
-        assertThat(driver.findElement(By.id("latitude")).getText(), is(latitude));
-        assertThat(driver.findElement(By.id("longitude")).getText(), is(longitude));
+        assertThat(driver.findElement(By.id("latitude")).getText(), is(String.valueOf(latitude)));
+        assertThat(driver.findElement(By.id("longitude")).getText(), is(String.valueOf(longitude)));
     }
 }
