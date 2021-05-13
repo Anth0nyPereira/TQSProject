@@ -61,8 +61,7 @@ public class PagesController {
 
         String[] coordinatesArray = coordinates.split("\\s+");
 
-        if (coordinatesArray.length == 0 || coordinatesArray.length == 1 || coordinatesArray.length >= 3) {
-            System.out.println(coordinatesArray[0]);
+        if (coordinatesArray.length != 2) {
             return "error400";
         }
 
