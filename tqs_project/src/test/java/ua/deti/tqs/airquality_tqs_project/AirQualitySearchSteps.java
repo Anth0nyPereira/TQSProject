@@ -4,6 +4,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.fr.Alors;
+import io.cucumber.java.fr.Et;
+import io.cucumber.java.fr.Quand;
+import io.cucumber.java.fr.Soit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
@@ -44,6 +48,38 @@ public class AirQualitySearchSteps {
 
     @Then("{string} should appear in the header")
     public void shouldAppearInTheHeader(String city) {
-        assertThat(driver.findElement(By.id("cityName")).getText(), is("Aveiro"));
+        assertThat(driver.findElement(By.id("cityName")).getText(), is(city));
+    }
+
+    @Soit("que l'application a été mise en route")
+    public void queLApplicationAÉtéMiseEnRoute() {
+        System.setProperty("webdriver.chrome.driver", "/home/anth0nypereira/Desktop/LEI/TQS/TQSProject/tqs_project/src/test/resources/chromedriver");
+        driver = new ChromeDriver();
+    }
+
+
+    @Quand("un utilisateur vá sur la page d'accueil")
+    public void unUtilisateurVáSurLaPageDAccueil() {
+        driver.get("http://localhost:8080/");
+        driver.manage().window().setSize(new Dimension(1920, 1020));
+    }
+
+
+    @Et("écrit {double} et {double} sur la barre de recherche réservé pour la recherche par coordonnées")
+    public void écritEtSurLaBarreDeRechercheRéservéPourLaRechercheParCoordonnées(double latitude, double longitude) {
+        driver.findElement(By.xpath("//input[@placeholder='Search by coords...']")).sendKeys(String.valueOf(latitude) + " " + String.valueOf(longitude));
+    }
+
+
+    @Et("appuie sur Enter")
+    public void appuieSurEnter() {
+        driver.findElement(By.cssSelector("form:nth-child(2) .btn-search")).click();
+    }
+
+
+    @Alors("{double} et {double} apparaissent en-tête de page")
+    public void etApparaissentEnTêteDePage(double latitude, double longitude) {
+        assertThat(driver.findElement(By.id("latitude")).getText(), is(latitude));
+        assertThat(driver.findElement(By.id("longitude")).getText(), is(longitude));
     }
 }
