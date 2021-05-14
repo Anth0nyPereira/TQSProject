@@ -23,6 +23,9 @@ public class AirQualityController {
 
     @GetMapping("/data")
     public ResponseEntity<Object> getData(@RequestParam String city) {
+        if (city.equals("")) {
+            return new ResponseEntity<>("Parameter was empty, so could not find any data", HttpStatus.BAD_REQUEST);
+        }
         AirQuality aq = aqService.getData(city);
         if (aq != null) {
             return new ResponseEntity<>(aq, HttpStatus.OK);
