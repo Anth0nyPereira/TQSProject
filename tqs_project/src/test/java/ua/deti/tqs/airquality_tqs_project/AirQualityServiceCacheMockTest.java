@@ -12,7 +12,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 
 @ExtendWith(MockitoExtension.class)
-public class AirQualityMockTest {
+public class AirQualityServiceCacheMockTest {
 
     @Mock
     AirQualityCache aqCache;

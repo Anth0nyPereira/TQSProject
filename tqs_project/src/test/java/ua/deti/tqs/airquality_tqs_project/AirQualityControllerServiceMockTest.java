@@ -14,7 +14,7 @@ import ua.deti.tqs.airquality_tqs_project.service.AirQualityService;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(MockitoExtension.class)
-public class AirQualityMockSecondTest {
+public class AirQualityControllerServiceMockTest {
 
     @InjectMocks
     AirQualityController airQualityController;
