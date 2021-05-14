@@ -12,7 +12,7 @@
 ### API endpoints
 
 ```
-GET /api/data
+GET /api/data?city=Aveiro
 - Search for air quality data by a city name.
 - Example value:
 {
@@ -32,7 +32,7 @@ GET /api/data
 ```
 
 ```
-GET /api/dataByCoords
+GET /api/dataByCoords?lat=40&lon=-40
 - Search for air quality data by coordinates.
 - Example value:
 {
