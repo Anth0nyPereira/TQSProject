@@ -2,6 +2,8 @@ package ua.deti.tqs.airquality_tqs_project.component;
 
 import org.springframework.stereotype.Component;
 
+// class that consists of 3 int counters  -  number of requests (Controller + RestController), number of hits (when the user requested for a city that already was in cache, and the AirQuality object is an up-to-date one,
+// and finally the number of misses (when the user requested for a city that is present in cache but is outdated)
 @Component
 public class AirQualityStatistics {
     private int countRequests;
@@ -11,7 +13,7 @@ public class AirQualityStatistics {
     public AirQualityStatistics() {
 
     }
-
+    // simple getters
     public int getCountRequests() {
         return countRequests;
     }
@@ -35,7 +37,6 @@ public class AirQualityStatistics {
     }
 
     public int updateMisses() {
-        System.out.println("update: " + this);
         this.misses = this.misses + 1;
         return this.misses;
     }

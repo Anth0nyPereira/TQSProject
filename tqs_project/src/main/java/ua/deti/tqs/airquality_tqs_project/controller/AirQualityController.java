@@ -21,7 +21,7 @@ public class AirQualityController {
     @Autowired
     private AirQualityService aqService;
 
-    @GetMapping("/data")
+    @GetMapping("/data") // endpoint to get AirQuality data by a city name
     public ResponseEntity<Object> getData(@RequestParam String city) {
         if (city.equals("")) {
             return new ResponseEntity<>("Parameter was empty, so could not find any data", HttpStatus.BAD_REQUEST);
@@ -35,7 +35,17 @@ public class AirQualityController {
 
     }
 
-    @GetMapping("/stats")
+    @GetMapping("/dataByCoords") // endpoint to get AirQuality data by geographical coordinates
+    public ResponseEntity<Object> getDataByCoords(@RequestParam double lat, @RequestParam double lon) {
+        AirQuality aq = aqService.getDataByCoords(lat, lon);
+        if (aq != null) {
+            return new ResponseEntity<>(aq, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Could not find any data", HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/stats") // endpoint to get cache statistics
     public ResponseEntity<Object> getStatistics() {
         AirQualityStatistics aqs = aqService.getStats();
         if (aqs != null) {
@@ -46,17 +56,7 @@ public class AirQualityController {
 
     }
 
-    @GetMapping("/dataByCoords")
-    public ResponseEntity<Object> getDataByCoords(@RequestParam double lat, @RequestParam double lon) {
-        AirQuality aq = aqService.getDataByCoords(lat, lon);
-        if (aq != null) {
-            return new ResponseEntity<>(aq, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>("Could not find any data", HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @GetMapping("/cache")
+    @GetMapping("/cache") // endpoint to get content of cache atm
     public ResponseEntity<Object> getAllCitiesFromCache() {
         Map<City, AirQuality> cache = aqService.findAll();
         if (!cache.isEmpty()) {

@@ -20,24 +20,23 @@ public class AirQualityService {
     @Autowired
     private AirQualityCache airQualityCache;
 
-    @Value("${apiKey}")
+    @Value("${apiKey}") // my API KEY DONT SEE IT PLS :P
     private String apiKey;
 
     private static RestTemplate restTemplate = new RestTemplate();
 
-    public AirQuality getData(String cityName) {
+    public AirQuality getData(String cityName) { // get Data by cityname, 1st it checks if the City already exists in cache and if the AirQuality data is "recent" (with a recent TTL - time attribute)
+        // each 3-5 seconds is a miss basically, so the best way to actually get the information from the cache is reloading the page in the reload button or spamming the POSTMAN's Send button
         cityName = cityName.toLowerCase();
         cityName = cityName.substring(0, 1).toUpperCase() + cityName.substring(1);
         log.info("Cache at the moment: " + airQualityCache);
         if (airQualityCache.checkIfCityExists(cityName)) {
             Date date = new Date();
-            long timeMs = date.getTime();
+            long timeMs = date.getTime(); // fresh-new TTL :)
             long oldCityTime = airQualityCache.returnTimeByCityName(cityName);
-            //System.out.println("timeMs: " + timeMs);
-            //System.out.println("difference: " + (timeMs - oldCityTime));
             if (timeMs - oldCityTime  >= 10000) { // invalid, remove and call external API
                 airQualityCache.removeByCityName(cityName);
-                AirQuality airQuality = getDataFromExternalAPI(cityName);
+                AirQuality airQuality = getDataFromExternalAPI(cityName); // call the method that consults the external API because the data found was outdated
                 log.info("came from external API because data was invalid");
                 airQualityCache.updateRequests();
                 airQualityCache.updateMisses();
@@ -58,7 +57,7 @@ public class AirQualityService {
         }
     }
 
-    public AirQuality getDataFromExternalAPI(String cityName) {
+    public AirQuality getDataFromExternalAPI(String cityName) { // call external API
         RestTemplate restTemplate = getRestTemplate();
         String airQualityResults = restTemplate.getForObject("https://api.weatherbit.io/v2.0/current/airquality?city=" + cityName + "&key=" + apiKey, String.class);
         if (airQualityResults != null) {
@@ -85,19 +84,17 @@ public class AirQualityService {
     }
 
 
-    public AirQualityStatistics getStats() {
+    public AirQualityStatistics getStats() { // get cache statistics
         AirQualityStatistics aqs = airQualityCache.getCacheStatistics();
         return aqs;
     }
 
-    public AirQuality getDataByCoords(double lat, double lon) {
+    public AirQuality getDataByCoords(double lat, double lon) { // get data by geographical coordinates (similar to the cityname one)
         log.info("Cache at the moment: " + airQualityCache);
         if (airQualityCache.checkIfCityExists(lat, lon)) {
             Date date = new Date();
             long timeMs = date.getTime();
             long oldCityTime = airQualityCache.returnTimeByCoords(lat, lon);
-            //System.out.println("timeMs: " + timeMs);
-            //System.out.println("difference: " + (timeMs - oldCityTime));
             if (timeMs - oldCityTime  >= 10000) { // invalid, remove and call external API
                 airQualityCache.removeByCoords(lat, lon);
                 AirQuality airQuality = getDataByCoordsFromExternalAPI(lat, lon);
@@ -121,15 +118,13 @@ public class AirQualityService {
         }
     }
 
-    public AirQuality getDataByCoordsFromExternalAPI(double lat, double lon) {
+    public AirQuality getDataByCoordsFromExternalAPI(double lat, double lon) { // call external API by coordinates
         RestTemplate restTemplate = getRestTemplate();
         String airQualityResults = restTemplate.getForObject("https://api.weatherbit.io/v2.0/current/airquality?lat=" + lat + "&lon=" + lon + "&key=" + apiKey, String.class);
         JSONObject json = new JSONObject(airQualityResults);
         JSONArray dataArray = json.getJSONArray("data");
-        System.out.println(dataArray);
         JSONObject data = dataArray.getJSONObject(0);
-        if (!data.get("aqi").equals(null)) {
-            System.out.println(data.get("aqi"));
+        if (!data.get("aqi").equals(null)) { // sometimes the response has fields with null
             AirQuality airQuality = new AirQuality(data.getInt("aqi"), data.getDouble("co"), data.getDouble("o3"), data.getDouble("so2"), data.getDouble("no2"), data.getDouble("pm10"), data.getDouble("pm25"), data.getString("predominant_pollen_type"), data.getInt("pollen_level_tree"), data.getInt("pollen_level_weed"), data.getInt("pollen_level_grass"), data.getInt("mold_level"));
 
             // Instantiate new City object to be stored in cache
@@ -149,7 +144,7 @@ public class AirQualityService {
         }
     }
 
-    public Map<City, AirQuality> findAll() {
+    public Map<City, AirQuality> findAll() { // get content of cache
         return airQualityCache.getCache();
     }
 

@@ -2,6 +2,7 @@ package ua.deti.tqs.airquality_tqs_project;
 
 import java.util.Objects;
 
+// class that stores air quality data
 public class AirQuality {
 
     private int aqIndex;

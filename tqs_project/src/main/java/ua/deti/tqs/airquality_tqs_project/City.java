@@ -2,6 +2,7 @@ package ua.deti.tqs.airquality_tqs_project;
 
 import java.util.Objects;
 
+// class that stores the name and coordinates of a given city, and its TTL
 public class City {
     private String city;
     private long time;
