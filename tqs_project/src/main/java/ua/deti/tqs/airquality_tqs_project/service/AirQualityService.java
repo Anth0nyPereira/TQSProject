@@ -9,7 +9,7 @@ import ua.deti.tqs.airquality_tqs_project.AirQuality;
 import ua.deti.tqs.airquality_tqs_project.component.AirQualityCache;
 import org.json.*;
 import ua.deti.tqs.airquality_tqs_project.component.AirQualityStatistics;
-import ua.deti.tqs.airquality_tqs_project.component.City;
+import ua.deti.tqs.airquality_tqs_project.City;
 
 import java.util.*;
 

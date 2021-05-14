@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ua.deti.tqs.airquality_tqs_project.AirQuality;
 import ua.deti.tqs.airquality_tqs_project.component.AirQualityStatistics;
-import ua.deti.tqs.airquality_tqs_project.component.City;
+import ua.deti.tqs.airquality_tqs_project.City;
 import ua.deti.tqs.airquality_tqs_project.service.AirQualityService;
 
 import java.util.Map;

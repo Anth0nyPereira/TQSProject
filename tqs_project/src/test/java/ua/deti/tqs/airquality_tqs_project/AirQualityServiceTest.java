@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import ua.deti.tqs.airquality_tqs_project.component.AirQualityCache;
-import ua.deti.tqs.airquality_tqs_project.component.City;
+import ua.deti.tqs.airquality_tqs_project.City;
 import ua.deti.tqs.airquality_tqs_project.service.AirQualityService;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -31,7 +31,7 @@ public class AirQualityServiceTest {
 
     @Test
     public void givenExistingAirQualityInCache_whenSearchForCity_AndAirQualityIsInvalid_ThenCheckUpdateMisses() {
-        airQualityService.getData("Aveiro");
+        System.out.println(airQualityService.getData("Aveiro"));
         assertThat(airQualityCache.getCacheStatistics().getCountRequests()).isEqualTo(1);
         assertThat(airQualityCache.getCacheStatistics().getMisses()).isEqualTo(1);
         assertThat(airQualityCache.getCacheStatistics().getHits()).isEqualTo(0);

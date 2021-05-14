@@ -3,7 +3,7 @@ package ua.deti.tqs.airquality_tqs_project;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ua.deti.tqs.airquality_tqs_project.component.AirQualityCache;
-import ua.deti.tqs.airquality_tqs_project.component.City;
+import ua.deti.tqs.airquality_tqs_project.City;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;

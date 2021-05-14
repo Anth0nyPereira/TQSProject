@@ -1,4 +1,4 @@
-package ua.deti.tqs.airquality_tqs_project.component;
+package ua.deti.tqs.airquality_tqs_project;
 
 import java.util.Objects;
 

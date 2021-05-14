@@ -1,19 +1,15 @@
 package ua.deti.tqs.airquality_tqs_project;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
 import ua.deti.tqs.airquality_tqs_project.component.AirQualityCache;
 import ua.deti.tqs.airquality_tqs_project.service.AirQualityService;
-
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+
 
 @ExtendWith(MockitoExtension.class)
 public class AirQualityMockTest {
@@ -21,7 +17,7 @@ public class AirQualityMockTest {
     @Mock
     AirQualityCache aqCache;
 
-    @Mock( lenient = true)
+    @Mock
     AirQualityService aqService;
 
 

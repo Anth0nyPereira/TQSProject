@@ -3,6 +3,7 @@ package ua.deti.tqs.airquality_tqs_project.component;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ua.deti.tqs.airquality_tqs_project.AirQuality;
+import ua.deti.tqs.airquality_tqs_project.City;
 
 import java.util.HashMap;
 import java.util.Iterator;

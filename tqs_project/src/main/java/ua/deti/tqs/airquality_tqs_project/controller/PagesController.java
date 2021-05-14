@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import ua.deti.tqs.airquality_tqs_project.AirQuality;
-import ua.deti.tqs.airquality_tqs_project.component.City;
+import ua.deti.tqs.airquality_tqs_project.City;
 import ua.deti.tqs.airquality_tqs_project.service.AirQualityService;
 
 import java.util.HashMap;
