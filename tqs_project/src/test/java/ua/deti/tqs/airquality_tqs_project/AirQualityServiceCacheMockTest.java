@@ -32,7 +32,7 @@ public class AirQualityServiceCacheMockTest {
     }
 
     @Test
-    public void getAirQualityDataFromMockedExternalAPI() {
+    public void getAirQualityDataFromMockedExternalAPI() { // basically, test that mocks the external API
         String city = "Aveiro";
         assertThat(aqCache.checkIfCityExists(city)).isFalse();
         AirQuality res = aqService.getDataFromExternalAPI(city);

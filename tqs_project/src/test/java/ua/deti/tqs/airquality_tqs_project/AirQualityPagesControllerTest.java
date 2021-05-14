@@ -19,9 +19,11 @@ public class AirQualityPagesControllerTest {
 
     @Test
     public void whenGoodTypeParam_ThenAModelAndViewObjectIsCreated() {
-        assertThat(pagesController.Data("Aveiro")).isInstanceOf(ModelAndView.class);
+        assertThat(pagesController.Data("Aveiro")).isInstanceOf(ModelAndView.class); // remember that when you could obtain an AirQuality object that isn't null, it means that you
+        // actually reached some kind of results and a Model&View object was created, these results were added to this Model&View object and a new page was returned, with the information stored
+        // in this Model&View object
     }
-
+    // some invalid/empty searches
     @Test
     public void whenNumericTypeParam_ThenReturn404ErrorPage() {
         assertThat(pagesController.Data("12345")).isEqualTo("error404");

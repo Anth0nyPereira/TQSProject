@@ -29,7 +29,7 @@ public class AirQualityIT {
     private AirQualityCache airQualityCache;
 
     @Test
-    public void whenGetCache_ThenReturnCache()  {
+    public void whenGetCache_ThenReturnCache()  { // checks if previously added City exists in cache
         City city1 = new City("Lajes das Flores", 123456789, 40, -40);
         AirQuality aq1 = new AirQuality(25, 122.1, 13, 6, 12, 13, 5, "Molds", 1, 1, 0, 3);
         airQualityCache.add(city1, aq1);
@@ -47,7 +47,7 @@ public class AirQualityIT {
     }
 
     @Test
-    public void whenGetCacheStatistics_ThenReturnCacheStatistics()  {
+    public void whenGetCacheStatistics_ThenReturnCacheStatistics()  { // checks the updated statistics of cache
         City city1 = new City("Lajes das Flores", 123456789, 40, -40);
         AirQuality aq1 = new AirQuality(25, 122.1, 13, 6, 12, 13, 5, "Molds", 1, 1, 0, 3);
         airQualityCache.add(city1, aq1);

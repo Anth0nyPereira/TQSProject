@@ -16,7 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-
+// navigate through pages with cucumber
 public class AirQualitySearchSteps {
 
     private WebDriver driver;

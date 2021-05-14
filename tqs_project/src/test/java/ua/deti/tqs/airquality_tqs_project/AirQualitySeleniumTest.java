@@ -14,6 +14,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import java.util.*;
 
+// navigate through pages with selenium IDE
 public class AirQualitySeleniumTest {
   private WebDriver driver;
   private Map<String, Object> vars;

@@ -4,7 +4,7 @@ import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
-
+// test some endpoint from the developed API with rest-assured
 public class RestAssuredTest {
     @Test
     public void whenGetUrlThenStatusCode200() {

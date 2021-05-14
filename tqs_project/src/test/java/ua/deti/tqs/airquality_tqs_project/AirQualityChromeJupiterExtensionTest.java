@@ -15,7 +15,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class AirQualityChromeJupiterExtensionTest {
 
     @Test
-    void testChromeJupiterExtension(ChromeDriver driver) {
+    void testChromeJupiterExtension(ChromeDriver driver) { // test with jupiter selenium extension, checks if the search by cityname "Aveiro"
         driver.get("http://localhost:8080/");
         driver.manage().window().setSize(new Dimension(1920, 1020));
         driver.findElement(By.cssSelector(".choices__inner")).click();

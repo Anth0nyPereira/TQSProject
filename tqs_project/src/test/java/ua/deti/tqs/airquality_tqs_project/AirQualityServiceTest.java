@@ -30,7 +30,7 @@ public class AirQualityServiceTest {
     }
 
     @Test
-    public void givenExistingAirQualityInCache_whenSearchForCity_AndAirQualityIsInvalid_ThenCheckUpdateMisses() {
+    public void givenExistingAirQualityInCache_whenSearchForCity_AndAirQualityIsInvalid_ThenCheckUpdateMisses() { // test to get data of a city that already exists in cache but its content is outdated
         System.out.println(airQualityService.getData("Aveiro"));
         assertThat(airQualityCache.getCacheStatistics().getCountRequests()).isEqualTo(1);
         assertThat(airQualityCache.getCacheStatistics().getMisses()).isEqualTo(1);

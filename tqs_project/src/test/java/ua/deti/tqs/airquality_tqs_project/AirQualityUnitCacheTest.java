@@ -7,7 +7,7 @@ import ua.deti.tqs.airquality_tqs_project.City;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
-
+// unit tests to test the cache -> such as, the HashMap
 public class AirQualityUnitCacheTest {
 
     private AirQualityCache cache;

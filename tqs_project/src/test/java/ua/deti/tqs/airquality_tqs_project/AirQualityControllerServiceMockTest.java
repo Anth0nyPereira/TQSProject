@@ -33,8 +33,9 @@ public class AirQualityControllerServiceMockTest {
     public void getAirQualityDataFromMockedService() {
         String city = "Ovar";
         int expectedLevelMold = 3;
-        Object returnedAirQualityObject = airQualityController.getData(city).getBody();
-        String contentResult = returnedAirQualityObject.toString();
+        Object returnedAirQualityObject = airQualityController.getData(city).getBody(); // returns the airquality object defined earlier
+        String contentResult = returnedAirQualityObject.toString(); // basically the airquality object as a String, the way I found to make some kind of tests,
+        // because "Quem não tem cão caça com gato!!" --> if you dont speak Portuguese, it's a portuguese expression, google it ig
         assertTrue(contentResult.contains("PollenLevelMold=" + expectedLevelMold));
     }
 
