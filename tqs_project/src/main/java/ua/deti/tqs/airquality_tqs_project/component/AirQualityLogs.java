@@ -22,7 +22,7 @@ public class AirQualityLogs {
         this.date = Calendar.getInstance().getTime();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
         String strDate = dateFormat.format(date);
-        this.handler = new FileHandler("airQualityLog-" + strDate + ".log", append);
+        this.handler = new FileHandler("logs/airQualityLog-" + strDate + ".log", append);
         logger = Logger.getLogger("ua.deti.airquality_tqs_project");
         logger.addHandler(handler);
     }
