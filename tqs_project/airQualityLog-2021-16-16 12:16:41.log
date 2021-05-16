@@ -8,7 +8,7 @@
   <sequence>4</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>33</thread>
   <message>/api/stats endpoint was accessed</message>
@@ -20,7 +20,7 @@
   <sequence>5</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>34</thread>
   <message>/api/stats endpoint was accessed</message>
@@ -32,7 +32,7 @@
   <sequence>6</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>35</thread>
   <message>Redirected to the homepage</message>
@@ -44,7 +44,7 @@
   <sequence>7</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>38</thread>
   <message>Redirected to the empty search page</message>

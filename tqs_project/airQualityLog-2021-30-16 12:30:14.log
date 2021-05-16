@@ -8,7 +8,7 @@
   <sequence>4</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>32</thread>
   <message>Redirected to the homepage</message>
@@ -20,7 +20,7 @@
   <sequence>5</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>35</thread>
   <message>Redirected to the homepage</message>
@@ -32,7 +32,7 @@
   <sequence>6</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>37</thread>
   <message>Cache at the moment: AirQualityCache{cache={}}</message>
@@ -44,7 +44,7 @@
   <sequence>7</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>37</thread>
   <message>airqualityresults: {"data":[{"mold_level":1,"aqi":12,"pm10":8.20814,"co":270.784,"o3":23,"predominant_pollen_type":"Molds","so2":0.61281,"pollen_level_tree":1,"pollen_level_weed":1,"no2":2.28663,"pm25":3,"pollen_level_grass":1}],"city_name":"Aveiro","lon":"-8.64554","timezone":"Europe\/Lisbon","lat":"40.64427","country_code":"PT","state_code":"02"}
@@ -57,7 +57,7 @@
   <sequence>8</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>37</thread>
   <message>came from external API</message>
@@ -69,7 +69,7 @@
   <sequence>9</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>37</thread>
   <message>Model And View Not Null Was Created Successfully Aveiro</message>
@@ -81,7 +81,7 @@
   <sequence>10</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>37</thread>
   <message>Redirected to the results page</message>
@@ -93,7 +93,7 @@
   <sequence>11</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>39</thread>
   <message>Redirected to the homepage</message>
@@ -105,7 +105,7 @@
   <sequence>12</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>40</thread>
   <message>Cache at the moment: AirQualityCache{cache={City{city='Aveiro', time=1621164627325, latitude=40.64427, longitude=-8.64554}=AirQuality{aqIndex=12, co=270.784, o3=23.0, so2=0.61281, no2=2.28663, pm10=8.20814, pm25=3.0, predominantPollenType='Molds', pollenLevelTree=1, pollenLevelWeed=1, PollenLevelGrass=1, PollenLevelMold=1}}}</message>
@@ -117,7 +117,7 @@
   <sequence>13</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>40</thread>
   <message>came from external API</message>
@@ -129,7 +129,7 @@
   <sequence>14</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>40</thread>
   <message>Model And View Not Null Was Created Successfully with parameters 40.0 and -40.0</message>
@@ -141,7 +141,7 @@
   <sequence>15</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>40</thread>
   <message>Redirected to the results page</message>
@@ -153,7 +153,7 @@
   <sequence>16</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>41</thread>
   <message>Redirected to the homepage</message>
@@ -165,7 +165,7 @@
   <sequence>17</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>33</thread>
   <message>Redirected to the error400 page</message>
@@ -177,7 +177,7 @@
   <sequence>18</sequence>
   <logger>ua.deti.airquality_tqs_project</logger>
   <level>INFO</level>
-  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
   <method>addLog</method>
   <thread>35</thread>
   <message>/api/stats endpoint was accessed</message>

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import ua.deti.tqs.airquality_tqs_project.AirQuality;
-import ua.deti.tqs.airquality_tqs_project.AirQualityLogs;
+import ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs;
 import ua.deti.tqs.airquality_tqs_project.component.AirQualityCache;
 import org.json.*;
 import ua.deti.tqs.airquality_tqs_project.component.AirQualityStatistics;

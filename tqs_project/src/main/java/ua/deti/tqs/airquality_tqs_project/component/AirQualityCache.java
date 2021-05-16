@@ -19,7 +19,8 @@ public class AirQualityCache {
     @Autowired
     private AirQualityStatistics stats; // class that contains 3 statistics counters
 
-
+    @Autowired
+    private AirQualityLogs logs;
 
     public AirQualityCache() {
     }
@@ -35,10 +36,12 @@ public class AirQualityCache {
             City res = i.next();
             if (res.getCity().equals(cityName)) {
                 log.info("City with cityname " + cityName + " already exists in cache");
+                logs.addLog("City with cityname " + cityName + " already exists in cache");
                 return true;
             }
         }
         log.info("City with cityname " + cityName + " does not exist in cache");
+        logs.addLog("City with cityname " + cityName + " does not exist in cache");
         return false;
     }
 
@@ -61,6 +64,7 @@ public class AirQualityCache {
         if (oldCity != null) {
             cache.remove(oldCity);
             log.info("City was removed successfully");
+            logs.addLog("City was removed successfully");
         }
     }
 
@@ -86,16 +90,19 @@ public class AirQualityCache {
 
     public int updateRequests() { // updates the number of requests
         log.info("Number of requests was updated successfully");
+        logs.addLog("Number of requests was updated successfully");
         return stats.updateRequests();
     }
 
     public int updateHits() { // updates the number of hits
         log.info("Number of hits was updated successfully");
+        logs.addLog("Number of hits was updated successfully");
         return stats.updateHits();
     }
 
     public int updateMisses() { // updates the number of misses
         log.info("Number of misses was updated successfully");
+        logs.addLog("Number of misses was updated successfully");
         return stats.updateMisses();
     }
 
@@ -116,10 +123,12 @@ public class AirQualityCache {
             City res = i.next();
             if (res.getLatitude() == lat && res.getLongitude() == lon) {
                 log.info("City with coordinates " + lat + " and " + lon + " already exists in cache");
+                logs.addLog("City with coordinates " + lat + " and " + lon + " already exists in cache");
                 return true;
             }
         }
-        log.info("City with coordinates " + lat + " and " + lon + " already exists in cache");
+        log.info("City with coordinates " + lat + " and " + lon + " does not exist in cache");
+        logs.addLog("City with coordinates " + lat + " and " + lon + " does not exist in cache");
         return false;
     }
 
@@ -150,6 +159,7 @@ public class AirQualityCache {
         if (oldCity != null) {
             cache.remove(oldCity);
             log.info("City was removed successfully");
+            logs.addLog("City was removed successfully");
         }
     }
 
