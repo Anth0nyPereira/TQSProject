@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import ua.deti.tqs.airquality_tqs_project.AirQuality;
+import ua.deti.tqs.airquality_tqs_project.AirQualityLogs;
 import ua.deti.tqs.airquality_tqs_project.component.AirQualityCache;
 import org.json.*;
 import ua.deti.tqs.airquality_tqs_project.component.AirQualityStatistics;
@@ -20,6 +21,9 @@ public class AirQualityService {
     @Autowired
     private AirQualityCache airQualityCache;
 
+    @Autowired
+    private AirQualityLogs logs;
+
     @Value("${apiKey}") // my API KEY DONT SEE IT PLS :P
     private String apiKey;
 
@@ -30,6 +34,7 @@ public class AirQualityService {
         cityName = cityName.toLowerCase();
         cityName = cityName.substring(0, 1).toUpperCase() + cityName.substring(1);
         log.info("Cache at the moment: " + airQualityCache);
+        logs.addLog("Cache at the moment: " + airQualityCache);
         if (airQualityCache.checkIfCityExists(cityName)) {
             Date date = new Date();
             long timeMs = date.getTime(); // fresh-new TTL :)
@@ -37,17 +42,21 @@ public class AirQualityService {
             if (timeMs - oldCityTime  >= 10000) { // invalid, remove and call external API
                 airQualityCache.removeByCityName(cityName);
                 AirQuality airQuality = getDataFromExternalAPI(cityName); // call the method that consults the external API because the data found was outdated
-                log.info("came from external API because data was invalid");
+                log.info("came from external API because data was outdated");
+                logs.addLog("came from external API because data was outdated");
                 airQualityCache.updateRequests();
                 airQualityCache.updateMisses();
                 log.info("Cache statistics: " + airQualityCache.getCacheStatistics());
+                logs.addLog("Cache statistics: " + airQualityCache.getCacheStatistics());
                 return airQuality;
             } else {
                 AirQuality airQuality = airQualityCache.getValue(cityName);
                 log.info("came from cache");
+                logs.addLog("came from cache");
                 airQualityCache.updateRequests();
                 airQualityCache.updateHits();
                 log.info("Cache statistics: " + airQualityCache.getCacheStatistics());
+                logs.addLog("Cache statistics: " + airQualityCache.getCacheStatistics());
                 return airQuality;
             }
 
@@ -62,6 +71,7 @@ public class AirQualityService {
         String airQualityResults = restTemplate.getForObject("https://api.weatherbit.io/v2.0/current/airquality?city=" + cityName + "&key=" + apiKey, String.class);
         if (airQualityResults != null) {
             log.info("airqualityresults: " + airQualityResults);
+            logs.addLog("airqualityresults: " + airQualityResults);
             JSONObject json = new JSONObject(airQualityResults);
             JSONArray dataArray = json.getJSONArray("data");
             JSONObject data = dataArray.getJSONObject(0);
@@ -77,6 +87,7 @@ public class AirQualityService {
             // Store it in cache
             airQualityCache.add(city, airQuality);
             log.info("came from external API");
+            logs.addLog("came from external API");
             return airQuality;
         } else {
             return null;
@@ -91,6 +102,7 @@ public class AirQualityService {
 
     public AirQuality getDataByCoords(double lat, double lon) { // get data by geographical coordinates (similar to the cityname one)
         log.info("Cache at the moment: " + airQualityCache);
+        logs.addLog("Cache at the moment: " + airQualityCache);
         if (airQualityCache.checkIfCityExists(lat, lon)) {
             Date date = new Date();
             long timeMs = date.getTime();
@@ -98,17 +110,21 @@ public class AirQualityService {
             if (timeMs - oldCityTime  >= 10000) { // invalid, remove and call external API
                 airQualityCache.removeByCoords(lat, lon);
                 AirQuality airQuality = getDataByCoordsFromExternalAPI(lat, lon);
-                log.info("came from external API because data was invalid");
+                log.info("came from external API because data was outdated");
+                logs.addLog("came from external API because data was outdated");
                 airQualityCache.updateRequests();
                 airQualityCache.updateMisses();
                 log.info("Cache statistics: " + airQualityCache.getCacheStatistics());
+                logs.addLog("Cache statistics: " + airQualityCache.getCacheStatistics());
                 return airQuality;
             } else {
                 AirQuality airQuality = airQualityCache.getValue(lat, lon);
                 log.info("came from cache");
+                logs.addLog("came from cache");
                 airQualityCache.updateRequests();
                 airQualityCache.updateHits();
                 log.info("Cache statistics: " + airQualityCache.getCacheStatistics());
+                logs.addLog("Cache statistics: " + airQualityCache.getCacheStatistics());
                 return airQuality;
             }
 
@@ -138,6 +154,7 @@ public class AirQualityService {
             // Store it in cache
             airQualityCache.add(city, airQuality);
             log.info("came from external API");
+            logs.addLog("came from external API");
             return airQuality;
         } else {
             return null;

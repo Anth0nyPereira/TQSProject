@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import ua.deti.tqs.airquality_tqs_project.AirQuality;
+import ua.deti.tqs.airquality_tqs_project.AirQualityLogs;
 import ua.deti.tqs.airquality_tqs_project.service.AirQualityService;
 
 
@@ -18,9 +19,13 @@ public class PagesController {
     @Autowired
     private AirQualityService service;
 
+    @Autowired
+    private AirQualityLogs logs;
+
     @RequestMapping("") // mapping to the homepage
     public String Home() {
         log.info("Redirected to the homepage");
+        logs.addLog("Redirected to the homepage");
         return "index";
     }
 
@@ -28,6 +33,7 @@ public class PagesController {
     public Object Data(@RequestParam String city) {
         if (city == "") { // when a user makes an empty search
             log.info("Redirected to the empty search page");
+            logs.addLog("Redirected to the empty search page");
             return "emptySearch";
         } else if (!isNumeric(city)) { // checks if the string city has not numeric characters
             city = city.toLowerCase();
@@ -37,16 +43,20 @@ public class PagesController {
             if (airQuality != null) {
                 modelAndView.addObject("airquality", airQuality);
                 modelAndView.addObject("city", city);
-                log.info("Model And View Not Null Was Created Successfully");
+                log.info("Model And View Not Null Was Created Successfully with parameter " + city);
+                logs.addLog("Model And View Not Null Was Created Successfully " + city);
                 log.info("Redirected to the results page");
+                logs.addLog("Redirected to the results page");
                 return modelAndView;
             } else {
                 log.info("Redirected to the error404 page");
+                logs.addLog("Redirected to the error404 page");
                 return "error404";
             }
 
         } else {
             log.info("Redirected to the error404 page");
+            logs.addLog("Redirected to the error404 page");
             return "error404";
         }
     }
@@ -65,6 +75,7 @@ public class PagesController {
 
         if (coordinatesArray.length != 2) {
             log.info("Redirected to the error400 page");
+            logs.addLog("Redirected to the error400 page");
             return "error400";
         }
 
@@ -76,6 +87,7 @@ public class PagesController {
             double longitude = Double.parseDouble(lon);
             if (latitude > 90 || latitude < -90 || longitude > 180 || longitude < -180) { // invalid latitude & longitude ranges
                 log.info("Redirected to the error400 page");
+                logs.addLog("Redirected to the error400 page");
                 return "error400";
             } else {
                 ModelAndView modelAndView = new ModelAndView("dataByCoords");
@@ -86,15 +98,20 @@ public class PagesController {
                     modelAndView.addObject("latitude", latitude);
                     modelAndView.addObject("longitude", longitude);
                     modelAndView.addObject("city", city);
-                    log.info("Model And View Not Null Was Created Successfully");
+                    log.info("Model And View Not Null Was Created Successfully with parameters " + latitude + " and " + longitude);
+                    logs.addLog("Model And View Not Null Was Created Successfully with parameters " + latitude + " and " + longitude);
+                    log.info("Redirected to the results page");
+                    logs.addLog("Redirected to the results page");
                     return modelAndView;
                 } else {
                     log.info("Redirected to the error404 page");
+                    logs.addLog("Redirected to the error404 page");
                     return "error404";
                 }
             }
         } else {
             log.info("Redirected to the error400 page");
+            logs.addLog("Redirected to the error400 page");
             return "error400";
         }
     }

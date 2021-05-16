@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-16T11:17:00.634489Z</date>
+  <millis>1621163820634</millis>
+  <nanos>489000</nanos>
+  <sequence>4</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>33</thread>
+  <message>/api/stats endpoint was accessed</message>
+</record>
+<record>
+  <date>2021-05-16T11:17:01.834668Z</date>
+  <millis>1621163821834</millis>
+  <nanos>668000</nanos>
+  <sequence>5</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>34</thread>
+  <message>/api/stats endpoint was accessed</message>
+</record>
+<record>
+  <date>2021-05-16T11:17:05.904054Z</date>
+  <millis>1621163825904</millis>
+  <nanos>54000</nanos>
+  <sequence>6</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>35</thread>
+  <message>Redirected to the homepage</message>
+</record>
+<record>
+  <date>2021-05-16T11:17:10.158581Z</date>
+  <millis>1621163830158</millis>
+  <nanos>581000</nanos>
+  <sequence>7</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>38</thread>
+  <message>Redirected to the empty search page</message>
+</record>
+</log>
