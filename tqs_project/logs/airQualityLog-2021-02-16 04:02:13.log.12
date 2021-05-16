@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-16T15:02:13.707362Z</date>
+  <millis>1621177333707</millis>
+  <nanos>362000</nanos>
+  <sequence>3</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>1</thread>
+  <message>City with cityname Aveiro already exists in cache</message>
+</record>
+<record>
+  <date>2021-05-16T15:02:13.724217Z</date>
+  <millis>1621177333724</millis>
+  <nanos>217000</nanos>
+  <sequence>4</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>1</thread>
+  <message>City with cityname Aveiro already exists in cache</message>
+</record>
+</log>

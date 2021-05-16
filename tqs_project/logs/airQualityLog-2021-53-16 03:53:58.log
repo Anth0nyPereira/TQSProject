@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-16T14:57:29.604925Z</date>
+  <millis>1621177049604</millis>
+  <nanos>925000</nanos>
+  <sequence>214</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>274</thread>
+  <message>/api/dataByCoords endpoint was accessed with parameters 40.0 and -40.0</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:29.605954Z</date>
+  <millis>1621177049605</millis>
+  <nanos>954000</nanos>
+  <sequence>215</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>274</thread>
+  <message>Cache at the moment: AirQualityCache{cache={}}</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:30.269290Z</date>
+  <millis>1621177050269</millis>
+  <nanos>290000</nanos>
+  <sequence>216</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>274</thread>
+  <message>came from external API</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:31.139359Z</date>
+  <millis>1621177051139</millis>
+  <nanos>359000</nanos>
+  <sequence>217</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>275</thread>
+  <message>/api/data endpoint was accessed with parameter </message>
+</record>
+<record>
+  <date>2021-05-16T14:57:31.165410Z</date>
+  <millis>1621177051165</millis>
+  <nanos>410000</nanos>
+  <sequence>218</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>276</thread>
+  <message>/api/data endpoint was accessed with parameter Aveiro</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:31.167386Z</date>
+  <millis>1621177051167</millis>
+  <nanos>386000</nanos>
+  <sequence>219</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>276</thread>
+  <message>Cache at the moment: AirQualityCache{cache={City{city='Lajes das Flores', time=1621177050269, latitude=40.0, longitude=-40.0}=AirQuality{aqIndex=48, co=296.652, o3=104.427, so2=0.356231, no2=0.209184, pm10=3.41862, pm25=1.10909, predominantPollenType='Molds', pollenLevelTree=0, pollenLevelWeed=0, PollenLevelGrass=0, PollenLevelMold=0}}}</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:31.346095Z</date>
+  <millis>1621177051346</millis>
+  <nanos>95000</nanos>
+  <sequence>220</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>276</thread>
+  <message>airqualityresults: {"data":[{"mold_level":1,"aqi":33,"pm10":11.7868,"co":270.784,"o3":72.3302,"predominant_pollen_type":"Molds","so2":0.574626,"pollen_level_tree":1,"pollen_level_weed":1,"no2":14.8,"pm25":4.36956,"pollen_level_grass":1}],"city_name":"Aveiro","lon":"-8.64554","timezone":"Europe\/Lisbon","lat":"40.64427","country_code":"PT","state_code":"02"}
+</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:31.346470Z</date>
+  <millis>1621177051346</millis>
+  <nanos>470000</nanos>
+  <sequence>221</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>276</thread>
+  <message>came from external API</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:31.392030Z</date>
+  <millis>1621177051392</millis>
+  <nanos>30000</nanos>
+  <sequence>222</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>277</thread>
+  <message>Redirected to the homepage</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:31.436646Z</date>
+  <millis>1621177051436</millis>
+  <nanos>646000</nanos>
+  <sequence>223</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>278</thread>
+  <message>/api/data endpoint was accessed with parameter 12345</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:31.437132Z</date>
+  <millis>1621177051437</millis>
+  <nanos>132000</nanos>
+  <sequence>224</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>278</thread>
+  <message>Cache at the moment: AirQualityCache{cache={City{city='Lajes das Flores', time=1621177050269, latitude=40.0, longitude=-40.0}=AirQuality{aqIndex=48, co=296.652, o3=104.427, so2=0.356231, no2=0.209184, pm10=3.41862, pm25=1.10909, predominantPollenType='Molds', pollenLevelTree=0, pollenLevelWeed=0, PollenLevelGrass=0, PollenLevelMold=0}, City{city='Aveiro', time=1621177051346, latitude=40.64427, longitude=-8.64554}=AirQuality{aqIndex=33, co=270.784, o3=72.3302, so2=0.574626, no2=14.8, pm10=11.7868, pm25=4.36956, predominantPollenType='Molds', pollenLevelTree=1, pollenLevelWeed=1, PollenLevelGrass=1, PollenLevelMold=1}}}</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:41.498886Z</date>
+  <millis>1621177061498</millis>
+  <nanos>886000</nanos>
+  <sequence>225</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>283</thread>
+  <message>Redirected to the homepage</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:42.243489Z</date>
+  <millis>1621177062243</millis>
+  <nanos>489000</nanos>
+  <sequence>226</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>279</thread>
+  <message>Cache at the moment: AirQualityCache{cache={City{city='Lajes das Flores', time=1621177050269, latitude=40.0, longitude=-40.0}=AirQuality{aqIndex=48, co=296.652, o3=104.427, so2=0.356231, no2=0.209184, pm10=3.41862, pm25=1.10909, predominantPollenType='Molds', pollenLevelTree=0, pollenLevelWeed=0, PollenLevelGrass=0, PollenLevelMold=0}, City{city='Aveiro', time=1621177051346, latitude=40.64427, longitude=-8.64554}=AirQuality{aqIndex=33, co=270.784, o3=72.3302, so2=0.574626, no2=14.8, pm10=11.7868, pm25=4.36956, predominantPollenType='Molds', pollenLevelTree=1, pollenLevelWeed=1, PollenLevelGrass=1, PollenLevelMold=1}}}</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:42.856677Z</date>
+  <millis>1621177062856</millis>
+  <nanos>677000</nanos>
+  <sequence>227</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>279</thread>
+  <message>airqualityresults: {"data":[{"mold_level":1,"aqi":33,"pm10":11.7868,"co":270.784,"o3":72.3302,"predominant_pollen_type":"Molds","so2":0.574626,"pollen_level_tree":1,"pollen_level_weed":1,"no2":14.8,"pm25":4.36956,"pollen_level_grass":1}],"city_name":"Aveiro","lon":"-8.64554","timezone":"Europe\/Lisbon","lat":"40.64427","country_code":"PT","state_code":"02"}
+</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:42.857068Z</date>
+  <millis>1621177062857</millis>
+  <nanos>68000</nanos>
+  <sequence>228</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>279</thread>
+  <message>came from external API</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:42.857254Z</date>
+  <millis>1621177062857</millis>
+  <nanos>254000</nanos>
+  <sequence>229</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>279</thread>
+  <message>came from external API because data was outdated</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:42.857913Z</date>
+  <millis>1621177062857</millis>
+  <nanos>913000</nanos>
+  <sequence>230</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>279</thread>
+  <message>Cache statistics: AirQualityStatistics{countRequests=1, hits=0, misses=1}</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:42.858255Z</date>
+  <millis>1621177062858</millis>
+  <nanos>255000</nanos>
+  <sequence>231</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>279</thread>
+  <message>Model And View Not Null Was Created Successfully Aveiro</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:42.858399Z</date>
+  <millis>1621177062858</millis>
+  <nanos>399000</nanos>
+  <sequence>232</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>279</thread>
+  <message>Redirected to the results page</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:46.153170Z</date>
+  <millis>1621177066153</millis>
+  <nanos>170000</nanos>
+  <sequence>233</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>283</thread>
+  <message>Redirected to the homepage</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:46.744212Z</date>
+  <millis>1621177066744</millis>
+  <nanos>212000</nanos>
+  <sequence>234</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>279</thread>
+  <message>Cache at the moment: AirQualityCache{cache={City{city='Aveiro', time=1621177062857, latitude=40.64427, longitude=-8.64554}=AirQuality{aqIndex=33, co=270.784, o3=72.3302, so2=0.574626, no2=14.8, pm10=11.7868, pm25=4.36956, predominantPollenType='Molds', pollenLevelTree=1, pollenLevelWeed=1, PollenLevelGrass=1, PollenLevelMold=1}, City{city='Lajes das Flores', time=1621177050269, latitude=40.0, longitude=-40.0}=AirQuality{aqIndex=48, co=296.652, o3=104.427, so2=0.356231, no2=0.209184, pm10=3.41862, pm25=1.10909, predominantPollenType='Molds', pollenLevelTree=0, pollenLevelWeed=0, PollenLevelGrass=0, PollenLevelMold=0}}}</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:46.744584Z</date>
+  <millis>1621177066744</millis>
+  <nanos>584000</nanos>
+  <sequence>235</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>279</thread>
+  <message>came from cache</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:46.745133Z</date>
+  <millis>1621177066745</millis>
+  <nanos>133000</nanos>
+  <sequence>236</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>279</thread>
+  <message>Cache statistics: AirQualityStatistics{countRequests=2, hits=1, misses=1}</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:46.745408Z</date>
+  <millis>1621177066745</millis>
+  <nanos>408000</nanos>
+  <sequence>237</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>279</thread>
+  <message>Model And View Not Null Was Created Successfully Aveiro</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:46.745587Z</date>
+  <millis>1621177066745</millis>
+  <nanos>587000</nanos>
+  <sequence>238</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>279</thread>
+  <message>Redirected to the results page</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:47.519254Z</date>
+  <millis>1621177067519</millis>
+  <nanos>254000</nanos>
+  <sequence>239</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>283</thread>
+  <message>Redirected to the homepage</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:48.202502Z</date>
+  <millis>1621177068202</millis>
+  <nanos>502000</nanos>
+  <sequence>240</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>279</thread>
+  <message>Redirected to the error404 page</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:48.996395Z</date>
+  <millis>1621177068996</millis>
+  <nanos>395000</nanos>
+  <sequence>241</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>281</thread>
+  <message>Redirected to the homepage</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:49.540424Z</date>
+  <millis>1621177069540</millis>
+  <nanos>424000</nanos>
+  <sequence>242</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>278</thread>
+  <message>Cache at the moment: AirQualityCache{cache={City{city='Aveiro', time=1621177062857, latitude=40.64427, longitude=-8.64554}=AirQuality{aqIndex=33, co=270.784, o3=72.3302, so2=0.574626, no2=14.8, pm10=11.7868, pm25=4.36956, predominantPollenType='Molds', pollenLevelTree=1, pollenLevelWeed=1, PollenLevelGrass=1, PollenLevelMold=1}, City{city='Lajes das Flores', time=1621177050269, latitude=40.0, longitude=-40.0}=AirQuality{aqIndex=48, co=296.652, o3=104.427, so2=0.356231, no2=0.209184, pm10=3.41862, pm25=1.10909, predominantPollenType='Molds', pollenLevelTree=0, pollenLevelWeed=0, PollenLevelGrass=0, PollenLevelMold=0}}}</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:49.910368Z</date>
+  <millis>1621177069910</millis>
+  <nanos>368000</nanos>
+  <sequence>243</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>278</thread>
+  <message>Redirected to the error404 page</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:50.505093Z</date>
+  <millis>1621177070505</millis>
+  <nanos>93000</nanos>
+  <sequence>244</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>280</thread>
+  <message>Redirected to the homepage</message>
+</record>
+<record>
+  <date>2021-05-16T14:57:50.945400Z</date>
+  <millis>1621177070945</millis>
+  <nanos>400000</nanos>
+  <sequence>245</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>276</thread>
+  <message>Redirected to the empty search page</message>
+</record>

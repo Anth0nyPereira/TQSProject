@@ -2,8 +2,12 @@ package ua.deti.tqs.airquality_tqs_project;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Spy;
 import ua.deti.tqs.airquality_tqs_project.component.AirQualityCache;
 import ua.deti.tqs.airquality_tqs_project.City;
+import ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs;
+
+import java.io.IOException;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,8 +17,9 @@ public class AirQualityUnitCacheTest {
     private AirQualityCache cache;
 
     @BeforeEach
-    public void setUp() {
+    public void setUp() throws IOException {
         cache = new AirQualityCache();
+        cache.setLogs(new AirQualityLogs());
         AirQuality aq1 = new AirQuality(12, 264.5, 17, 4, 12, 13, 3, "Molds", 1, 1, 1, 1);
         cache.add(new City("Aveiro", 1111111111, 40.64427, -8.64554), aq1);
     }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-16T15:10:23.418146Z</date>
+  <millis>1621177823418</millis>
+  <nanos>146000</nanos>
+  <sequence>47</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>1</thread>
+  <message>City with cityname Aveiro already exists in cache</message>
+</record>
+<record>
+  <date>2021-05-16T15:10:23.419755Z</date>
+  <millis>1621177823419</millis>
+  <nanos>755000</nanos>
+  <sequence>48</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>1</thread>
+  <message>City was removed successfully</message>
+</record>
+<record>
+  <date>2021-05-16T15:10:23.428512Z</date>
+  <millis>1621177823428</millis>
+  <nanos>512000</nanos>
+  <sequence>49</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>1</thread>
+  <message>City with coordinates 40.64427 and -8.64554 already exists in cache</message>
+</record>
+<record>
+  <date>2021-05-16T15:10:23.433111Z</date>
+  <millis>1621177823433</millis>
+  <nanos>111000</nanos>
+  <sequence>50</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>1</thread>
+  <message>City with cityname Aveiro already exists in cache</message>
+</record>
+</log>

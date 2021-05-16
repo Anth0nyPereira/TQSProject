@@ -171,6 +171,10 @@ public class AirQualityCache {
         return null;
     }
 
+    public void setLogs(AirQualityLogs logs) {
+        this.logs = logs;
+    }
+
     @Override
     public String toString() {
         return "AirQualityCache{" +

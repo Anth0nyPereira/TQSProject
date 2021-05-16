@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-05-16T13:36:48.558600Z</date>
+  <millis>1621172208558</millis>
+  <nanos>600000</nanos>
+  <sequence>4</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>33</thread>
+  <message>Redirected to the homepage</message>
+</record>
+<record>
+  <date>2021-05-16T13:36:52.342204Z</date>
+  <millis>1621172212342</millis>
+  <nanos>204000</nanos>
+  <sequence>5</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>35</thread>
+  <message>Cache at the moment: AirQualityCache{cache={}}</message>
+</record>
+<record>
+  <date>2021-05-16T13:36:52.348688Z</date>
+  <millis>1621172212348</millis>
+  <nanos>688000</nanos>
+  <sequence>6</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>35</thread>
+  <message>City with coordinates 40.0 and -40.0 does not exist in cache</message>
+</record>
+<record>
+  <date>2021-05-16T13:36:53.511729Z</date>
+  <millis>1621172213511</millis>
+  <nanos>729000</nanos>
+  <sequence>7</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>35</thread>
+  <message>came from external API</message>
+</record>
+<record>
+  <date>2021-05-16T13:36:53.514399Z</date>
+  <millis>1621172213514</millis>
+  <nanos>399000</nanos>
+  <sequence>8</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>35</thread>
+  <message>City with coordinates 40.0 and -40.0 already exists in cache</message>
+</record>
+<record>
+  <date>2021-05-16T13:36:53.520205Z</date>
+  <millis>1621172213520</millis>
+  <nanos>205000</nanos>
+  <sequence>9</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>35</thread>
+  <message>Model And View Not Null Was Created Successfully with parameters 40.0 and -40.0</message>
+</record>
+<record>
+  <date>2021-05-16T13:36:53.521073Z</date>
+  <millis>1621172213521</millis>
+  <nanos>73000</nanos>
+  <sequence>10</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>35</thread>
+  <message>Redirected to the results page</message>
+</record>
+<record>
+  <date>2021-05-16T13:36:56.036655Z</date>
+  <millis>1621172216036</millis>
+  <nanos>655000</nanos>
+  <sequence>11</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>36</thread>
+  <message>Redirected to the homepage</message>
+</record>
+<record>
+  <date>2021-05-16T13:37:02.451621Z</date>
+  <millis>1621172222451</millis>
+  <nanos>621000</nanos>
+  <sequence>12</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>37</thread>
+  <message>Cache at the moment: AirQualityCache{cache={City{city='Lajes das Flores', time=1621172213510, latitude=40.0, longitude=-40.0}=AirQuality{aqIndex=48, co=298.321, o3=103.712, so2=0.362284, no2=0.23027, pm10=3.41696, pm25=1.0965, predominantPollenType='Molds', pollenLevelTree=0, pollenLevelWeed=0, PollenLevelGrass=0, PollenLevelMold=0}}}</message>
+</record>
+<record>
+  <date>2021-05-16T13:37:02.452186Z</date>
+  <millis>1621172222452</millis>
+  <nanos>186000</nanos>
+  <sequence>13</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>37</thread>
+  <message>City with cityname Lajes das flores  does not exist in cache</message>
+</record>
+<record>
+  <date>2021-05-16T13:37:03.116244Z</date>
+  <millis>1621172223116</millis>
+  <nanos>244000</nanos>
+  <sequence>14</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>37</thread>
+  <message>airqualityresults: {"data":[{"mold_level":0,"aqi":47,"pm10":0.503076,"co":315.428,"o3":101.566,"predominant_pollen_type":"Molds","so2":0.132713,"pollen_level_tree":0,"pollen_level_weed":0,"no2":0.304906,"pm25":0.422017,"pollen_level_grass":0}],"city_name":"Lajes das Flores","lon":"-31.17847","timezone":"Atlantic\/Azores","lat":"39.37744","country_code":"PT","state_code":"23"}
+</message>
+</record>
+<record>
+  <date>2021-05-16T13:37:03.118717Z</date>
+  <millis>1621172223118</millis>
+  <nanos>717000</nanos>
+  <sequence>15</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>37</thread>
+  <message>came from external API</message>
+</record>
+<record>
+  <date>2021-05-16T13:37:03.120913Z</date>
+  <millis>1621172223120</millis>
+  <nanos>913000</nanos>
+  <sequence>16</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>37</thread>
+  <message>Model And View Not Null Was Created Successfully Lajes das Flores </message>
+</record>
+<record>
+  <date>2021-05-16T13:37:03.122113Z</date>
+  <millis>1621172223122</millis>
+  <nanos>113000</nanos>
+  <sequence>17</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>37</thread>
+  <message>Redirected to the results page</message>
+</record>
+<record>
+  <date>2021-05-16T13:37:13.458827Z</date>
+  <millis>1621172233458</millis>
+  <nanos>827000</nanos>
+  <sequence>18</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>38</thread>
+  <message>Redirected to the homepage</message>
+</record>
+<record>
+  <date>2021-05-16T13:37:17.256443Z</date>
+  <millis>1621172237256</millis>
+  <nanos>443000</nanos>
+  <sequence>19</sequence>
+  <logger>ua.deti.airquality_tqs_project</logger>
+  <level>INFO</level>
+  <class>ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs</class>
+  <method>addLog</method>
+  <thread>39</thread>
+  <message>/api/cache endpoint was accessed</message>
+</record>
+</log>

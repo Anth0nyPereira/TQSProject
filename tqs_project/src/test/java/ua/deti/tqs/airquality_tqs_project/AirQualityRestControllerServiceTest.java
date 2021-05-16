@@ -2,12 +2,14 @@ package ua.deti.tqs.airquality_tqs_project;
 
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Spy;
 import org.mockito.internal.verification.VerificationModeFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import ua.deti.tqs.airquality_tqs_project.component.AirQualityLogs;
 import ua.deti.tqs.airquality_tqs_project.controller.AirQualityController;
 import ua.deti.tqs.airquality_tqs_project.service.AirQualityService;
 import static org.hamcrest.CoreMatchers.is;
@@ -20,6 +22,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 // service tests
 @WebMvcTest(AirQualityController.class)
 public class AirQualityRestControllerServiceTest {
+
+    @MockBean
+    private AirQualityLogs logs;
 
     @Autowired
     private MockMvc mvc;
